@@ -1,62 +1,59 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
-  selector: 'volume-control',
-  templateUrl: './volume-control.component.html',
-  styleUrls: ['./volume-control.component.scss']
+    selector: 'volume-control',
+    templateUrl: './volume-control.component.html',
+    styleUrls: ['./volume-control.component.scss']
 })
 
+interface StyleList {
+    [index: string]: unknown;
+}
+
 export class VolumeControlComponent {
+    iconChangeOn = [
+        0, 40, 80
+    ];
 
-  inputValue: number = 100;
-  previousValueState: number = this.inputValue;
-  currentIcon: number = 3;
-  isHovered: boolean = false;
+    private inputValue: number = 100;
+    private currentIcon: number = 3;
+    private previousValueState: number = this.inputValue;
+    private isHovered: boolean = false;
 
-  styleOnHovered = {
-    'background': 'black'
-  }
-
-  styleOnNotHovered = {
-    'background': 'white'
-  }
-
-  onInputUpdate() {
-
-    this.previousValueState = this.inputValue;
-    this.iconUpdate();
-  }
-  muteButton() {
-    if(this.inputValue != 0)
-    {
-      this.inputValue = 0;
+    private styleOnHovered: StyleList = {
+        backgroundColor: 'black'
     }
-    else
-    {
-      if(this.inputValue == 0 && this.previousValueState != 0)
-      {
-        this.inputValue = this.previousValueState;
-      }
-      if(this.inputValue == 0 && this.previousValueState == 0)
-      {
-        this.inputValue = 100;
-      }
+    private styleOnNotHovered: StyleList = {
+        backgroundColor: 'white'
     }
 
-    this.iconUpdate();
-  }
-  iconUpdate() {
-    if(this.inputValue == 0) {
-      this.currentIcon = 0;
+    private onInputUpdate(): void {
+        this.previousValueState = this.inputValue;
+        this.trigger();
     }
-    if(this.inputValue > 0 && this.inputValue <= 40) {
-      this.currentIcon = 1;
+
+    private getInputValue(): number {
+        return this.previousValueState !== 0 ? this.previousValueState : 100;
     }
-    if(this.inputValue > 40 && this.inputValue <= 80) {
-      this.currentIcon = 2;
+
+    private muteButton(): void {
+        this.inputValue = 0;
+        this.inputValue = this.getInputValue();
+
+        this.trigger();
     }
-    if(this.inputValue > 80) {
-      this.currentIcon = 3;
+
+    private trigger(): void {
+        this.iconUpdate();
     }
-  }
+
+    private iconUpdate(): void {
+        this.iconChangeOn.forEach(this.getIconByValue);
+    }
+
+    private getIconByValue(value: number, index: number) {
+        if (this.inputValue >= value) {
+            this.inputValue = index;
+        }
+    }
 }
