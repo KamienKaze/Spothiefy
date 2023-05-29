@@ -1,0 +1,51 @@
+@import "./../../../assets/color-palette.scss";
+
+body {
+  background: color(black);
+
+  width: 100%;
+  height: 9rem;
+  min-width: 70rem;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 0.5%;
+
+  div {
+    height: 9rem;
+  }
+
+  .flex-25 {
+    width: 25%;
+  }
+
+  .flex-50 {
+    width: 50%;
+  }
+
+  #song-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  #song-control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #volume-control {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  track-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+  }
+}

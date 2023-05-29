@@ -1,0 +1,17 @@
+@import "./../assets/color-palette.scss";
+
+body {
+  height: 100vh;
+  width: 100vw;
+
+  background: color(black);
+
+  footer {
+    position: fixed;
+
+    width: 100%;
+    height: 8.8rem;
+
+    bottom: 0%;
+  }
+}

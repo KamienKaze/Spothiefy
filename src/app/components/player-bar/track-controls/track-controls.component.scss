@@ -1,0 +1,129 @@
+@import "./../../../../assets/color-palette.scss";
+
+body {
+  height: 5.4rem;
+  width: 80%;
+  min-width: 35rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  row-gap: 1rem;
+
+  #button-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    column-gap: 2rem;
+
+    button {
+      width: 3.2rem;
+      height: 3.2rem;
+    }
+
+    .prev-next-btn {
+
+      background: black;
+      border: none;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      cursor: pointer;
+
+      .prev-next {
+        fill: color(gray);
+      }
+    }
+
+    .prev-next-btn:hover .prev-next {
+      fill: color(white);
+    }
+
+    .prev-next-btn:active .prev-next {
+      fill: color(gray);
+    }
+
+    #play-btn {
+
+      background: color(white);
+      border-radius: 100%;
+      border: none;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      cursor: pointer;
+
+      #play {
+        fill: black;
+      }
+    }
+
+    #play-btn:hover {
+      transform: scale(1.05);
+    }
+
+    #play-btn:active {
+      transform: scale(1);
+    }
+  }
+
+  #progress-bar {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    height: 1.4rem;
+    width: 90%;
+
+    cursor: pointer;
+
+    label {
+      color: color(gray);
+      font-size: x-small;
+      margin-left: 0.8rem;
+      margin-right: 0.8rem;
+      user-select: none;
+    }
+
+    progress {
+      border: 0;
+      height: 0.35rem;
+      width: 100%;
+      border-radius: 25px;
+      background: color(gray);
+    }
+    progress::-webkit-progress-bar {
+      border: 0;
+      height: 0.35rem;
+      width: 80%;
+      border-radius: 25px;
+    }
+
+    progress::-webkit-progress-value {
+      border: 0;
+      height: 0.35rem;
+      width: 80%;
+      border-radius: 25px;
+    }
+
+    progress::-moz-progress-bar {
+      border: 0;
+      height: 0.35rem;
+      width: 80%;
+      border-radius: 25px;
+    }
+  }
+}
+
+
+
