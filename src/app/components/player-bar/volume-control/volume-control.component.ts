@@ -10,21 +10,22 @@ interface StyleList {
     [index: string]: unknown;
 }
 
+const MAX_INPUT_VALUE = 100;
+const MIN_INPUT_VALUE = 0;
 export class VolumeControlComponent {
-    iconChangeOn = [
+    iconChangeOn: Array<number> = [
         0, 40, 80
     ];
 
-    private inputValue: number = 100;
+    private inputValue: number = MAX_INPUT_VALUE;
     private currentIcon: number = 3;
-    private previousValueState: number = this.inputValue;
+    private previousValueState: number = MAX_INPUT_VALUE;
     private isHovered: boolean = false;
 
-    private styleOnHovered: StyleList = {
-        backgroundColor: 'black'
-    }
-    private styleOnNotHovered: StyleList = {
-        backgroundColor: 'white'
+    private style: StyleList = {
+        backgroundColor: this.isHovered
+            ? 'black'
+            : 'white'
     }
 
     private onInputUpdate(): void {
@@ -33,11 +34,12 @@ export class VolumeControlComponent {
     }
 
     private getInputValue(): number {
-        return this.previousValueState !== 0 ? this.previousValueState : 100;
+        return this.previousValueState !== MIN_INPUT_VALUE
+            ? this.previousValueState : MAX_INPUT_VALUE;
     }
 
     private muteButton(): void {
-        this.inputValue = 0;
+        this.inputValue = MIN_INPUT_VALUE;
         this.inputValue = this.getInputValue();
 
         this.trigger();
