@@ -15,7 +15,7 @@ const VOLUME_ICON_PATH = `./assets/icons/volume`;
 })
 export class VolumeControlComponent {
     iconChangeOn: Array<number> = [
-        0, 35, 70
+        0, 25, 50, 75
     ];
 
     public inputValue: number = MAX_INPUT_VALUE;
