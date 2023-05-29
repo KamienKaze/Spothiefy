@@ -1,62 +1,57 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+
+interface StyleList {
+    [index: string]: unknown;
+}
+
+const MAX_INPUT_VALUE = 100;
+const MIN_INPUT_VALUE = 0;
+const VOLUME_ICON_PATH = `./assets/icons/volume`;
 
 @Component({
-  selector: 'volume-control',
-  templateUrl: './volume-control.component.html',
-  styleUrls: ['./volume-control.component.scss']
+    selector: 'volume-control',
+    templateUrl: './volume-control.component.html',
+    styleUrls: ['./volume-control.component.scss']
 })
-
 export class VolumeControlComponent {
+    iconChangeOn: Array<number> = [
+        0, 35, 70
+    ];
 
-  inputValue: number = 100;
-  previousValueState: number = this.inputValue;
-  currentIcon: number = 3;
-  isHovered: boolean = false;
+    public inputValue: number = MAX_INPUT_VALUE;
+    private previousValueState: number = MAX_INPUT_VALUE;
+    public isHovered: boolean = false;
 
-  styleOnHovered = {
-    'background': 'black'
-  }
-
-  styleOnNotHovered = {
-    'background': 'white'
-  }
-
-  onInputUpdate() {
-
-    this.previousValueState = this.inputValue;
-    this.iconUpdate();
-  }
-  muteButton() {
-    if(this.inputValue != 0)
-    {
-      this.inputValue = 0;
+    public getVolumeIcon(): string {
+        return `${VOLUME_ICON_PATH}/${this.getIconType()}.svg`
     }
-    else
-    {
-      if(this.inputValue == 0 && this.previousValueState != 0)
-      {
-        this.inputValue = this.previousValueState;
-      }
-      if(this.inputValue == 0 && this.previousValueState == 0)
-      {
-        this.inputValue = 100;
-      }
+    public getInputStyle(): StyleList {
+        return {
+            backgroundColor: this.isHovered
+                ? '#444'
+                : '#111'
+        };
+    }
+    public onInputUpdate(): void {
+        this.previousValueState = this.inputValue;
     }
 
-    this.iconUpdate();
-  }
-  iconUpdate() {
-    if(this.inputValue == 0) {
-      this.currentIcon = 0;
+
+    public muteButton(): void {
+        this.inputValue = MIN_INPUT_VALUE;
     }
-    if(this.inputValue > 0 && this.inputValue <= 40) {
-      this.currentIcon = 1;
+
+    private getIconType(): number {
+        return this.iconChangeOn.reduce(
+            (
+                accumulator: number,
+                currentValue: number,
+                currentIndex: number
+            ) =>
+                currentValue <= this.inputValue
+                    ? currentIndex
+                    : accumulator, 0
+        );
+
     }
-    if(this.inputValue > 40 && this.inputValue <= 80) {
-      this.currentIcon = 2;
-    }
-    if(this.inputValue > 80) {
-      this.currentIcon = 3;
-    }
-  }
 }
