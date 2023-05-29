@@ -15,11 +15,11 @@ const VOLUME_ICON_PATH = `./assets/icons/volume`;
 })
 export class VolumeControlComponent {
     iconChangeOn: Array<number> = [
-        0, 25, 50, 75
+        0, 1, 40, 80
     ];
 
     public inputValue: number = MAX_INPUT_VALUE;
-    private previousValueState: number = MAX_INPUT_VALUE;
+    private previousValueState: number = this.inputValue;
     public isHovered: boolean = false;
 
     public getVolumeIcon(): string {
@@ -36,9 +36,15 @@ export class VolumeControlComponent {
         this.previousValueState = this.inputValue;
     }
 
-
     public muteButton(): void {
-        this.inputValue = MIN_INPUT_VALUE;
+        if(this.inputValue === MIN_INPUT_VALUE && this.previousValueState === MIN_INPUT_VALUE) {
+            this.inputValue = MAX_INPUT_VALUE;
+        } else if(this.inputValue === MIN_INPUT_VALUE && this.previousValueState !== MIN_INPUT_VALUE) {
+            this.inputValue = this.previousValueState;
+        } else if(this.inputValue !== MIN_INPUT_VALUE) {
+            this.inputValue = MIN_INPUT_VALUE;
+        }
+
     }
 
     private getIconType(): number {

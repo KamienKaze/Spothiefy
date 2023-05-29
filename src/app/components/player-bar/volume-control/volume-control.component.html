@@ -1,9 +1,8 @@
 <body (mouseover)="isHovered = true" (mouseout)="isHovered = false">
-<img src="{{getVolumeIcon()}}" (click)="muteButton()" alt="Lorem" style="cursor: pointer"/>
+<img src="{{ getVolumeIcon() }}" (click)="muteButton()" alt="Volume"/>
 <input
         type="range"
         min="0"
-        style="transition: background-color ease-in .1s; cursor: pointer; border-radius: 3px;"
         max="100"
         [(ngModel)]="inputValue"
         (input)="onInputUpdate()"
