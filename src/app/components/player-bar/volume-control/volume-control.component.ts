@@ -1,61 +1,57 @@
 import {Component} from '@angular/core';
 
-@Component({
-    selector: 'volume-control',
-    templateUrl: './volume-control.component.html',
-    styleUrls: ['./volume-control.component.scss']
-})
-
 interface StyleList {
     [index: string]: unknown;
 }
 
 const MAX_INPUT_VALUE = 100;
 const MIN_INPUT_VALUE = 0;
+const VOLUME_ICON_PATH = `./assets/icons/volume`;
+
+@Component({
+    selector: 'volume-control',
+    templateUrl: './volume-control.component.html',
+    styleUrls: ['./volume-control.component.scss']
+})
 export class VolumeControlComponent {
     iconChangeOn: Array<number> = [
-        0, 40, 80
+        0, 35, 70
     ];
 
-    private inputValue: number = MAX_INPUT_VALUE;
-    private currentIcon: number = 3;
+    public inputValue: number = MAX_INPUT_VALUE;
     private previousValueState: number = MAX_INPUT_VALUE;
-    private isHovered: boolean = false;
+    public isHovered: boolean = false;
 
-    private style: StyleList = {
-        backgroundColor: this.isHovered
-            ? 'black'
-            : 'white'
+    public getVolumeIcon(): string {
+        return `${VOLUME_ICON_PATH}/${this.getIconType()}.svg`
     }
-
-    private onInputUpdate(): void {
+    public getInputStyle(): StyleList {
+        return {
+            backgroundColor: this.isHovered
+                ? '#444'
+                : '#111'
+        };
+    }
+    public onInputUpdate(): void {
         this.previousValueState = this.inputValue;
-        this.trigger();
     }
 
-    private getInputValue(): number {
-        return this.previousValueState !== MIN_INPUT_VALUE
-            ? this.previousValueState : MAX_INPUT_VALUE;
-    }
 
-    private muteButton(): void {
+    public muteButton(): void {
         this.inputValue = MIN_INPUT_VALUE;
-        this.inputValue = this.getInputValue();
-
-        this.trigger();
     }
 
-    private trigger(): void {
-        this.iconUpdate();
-    }
+    private getIconType(): number {
+        return this.iconChangeOn.reduce(
+            (
+                accumulator: number,
+                currentValue: number,
+                currentIndex: number
+            ) =>
+                currentValue <= this.inputValue
+                    ? currentIndex
+                    : accumulator, 0
+        );
 
-    private iconUpdate(): void {
-        this.iconChangeOn.forEach(this.getIconByValue);
-    }
-
-    private getIconByValue(value: number, index: number) {
-        if (this.inputValue >= value) {
-            this.inputValue = index;
-        }
     }
 }
