@@ -1,11 +1,29 @@
-$colors: (
-  black: #000000,
-  white: #ffffff,
-  dark-gray: #121212,
-  gray: #a6a6a6,
-  green: #1db954
+$black: #000000;
+$dark-gray: #121212;
+$medium-gray: #4d4d4d;
+$gray: #b2b2b2;
+$white: #ffffff;
+
+$green: #1db955;
+
+
+$primary: (
+        100: $black,
+        200: $dark-gray,
+        300: $medium-gray,
+        400: $gray,
+        500: $white
 );
 
-@function color($color) {
-  @return map-get($colors, $color);
+$accent: (
+        100: $green
+);
+
+
+@function getPrimary($color) {
+  @return map-get($primary, $color);
+}
+
+@function getAccent($color) {
+  @return map-get($accent, $color);
 }

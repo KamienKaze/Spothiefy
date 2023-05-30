@@ -3,108 +3,114 @@
 .volume-control-component {
   $rootClass: &;
 
+  margin: 1.5rem;
+  width: 11.5rem;
   height: 1.8rem;
+
   display: flex;
   flex-direction: row;
-  margin: 1.7rem;
-  border-radius: 20px;
   align-items: center;
   justify-content: center;
-  background-color: #111;
-  transition: background-color ease-in .2s;
-  column-gap: 6px;
-  padding: 2px 4px;
+  column-gap: 0.7rem;
 
-  input[type="range"], &__icon {
+  &__icon, &__slider {
     cursor: pointer;
   }
 
   &__icon {
-    margin: 1px 0 1px 4px;
+    width: 1.6rem;
+    filter:
+            brightness(0)
+            saturate(100%)
+            invert(79%)
+            sepia(8%)
+            saturate(21%)
+            hue-rotate(337deg)
+            brightness(89%)
+            contrast(93%);
+  }
 
-    width: 16px;
+  &__icon:hover {
+    filter: none;
   }
 
   input[type="range"] {
     -webkit-appearance: none;
     appearance: none;
-    background: transparent;
-    cursor: pointer;
-    width: 100%;
-    outline: none;
-  }
 
-  input[type="range"]::-webkit-slider-container {
-    appearance: none;
-    -webkit-appearance: none;
-    background-color: transparent;
-    border-radius: 0.5rem;
-  }
+    height: 0.5rem;
+    width: 80%;
 
-  input[type="range"]:focus {
+    border-radius: 5px;
+    overflow: hidden;
+
   }
 
   /***** Chrome, Safari, Opera and Edge Chromium styles *****/
-  /* slider track */
+  /* Slider track */
   input[type="range"]::-webkit-slider-runnable-track {
-    background-color: #053a5f;
-    border-radius: 0.5rem;
-    height: 0.5rem;
+    height: 1.1rem;
   }
 
-  /* slider thumb */
+  /* Slider thumb */
   input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default look */
+    /* Override default look */
+    -webkit-appearance: none;
     appearance: none;
-    margin-top: -2.5px; /* Centers thumb on the track */
-    border-radius: 20px;
-    transition: all ease .5s;
+    /* Centers thumb on the track */
+    margin-top: 0.3rem;
 
-    /*custom styles*/
-    background-color: #5cd5eb;
-    height: 11px;
-    width: 11px;
-  }
-
-  input[type="range"]:focus::-webkit-slider-thumb {
-    border: 1px solid #053a5f;
-    outline: 3px solid #053a5f;
+    /* Custom styles */
+    background: getPrimary(500);
+    height: 0.5rem;
+    width: 0.5rem;
+    border-radius: 50%;
+    box-shadow: -403px 0 0 400px getPrimary(500);
   }
 
   /******** Firefox styles ********/
-  /* slider track */
+  /* Slider track */
   input[type="range"]::-moz-range-track {
-    background-color: #053a5f;
-    border-radius: 0.5rem;
-    height: 0.5rem;
+    height: 1.2rem;
   }
 
   /* slider thumb */
   input[type="range"]::-moz-range-thumb {
-    -webkit-appearance: none; /* Override default look */
+    /* Centers thumb on the track */
+    margin-top: 0.35rem;
+
+    /* Custom styles */
+    background: getPrimary(500);
+    height: 0.5rem;
+    width: 0.5rem;
+    border-radius: 50%;
+    box-shadow: -403px 0 0 400px getPrimary(500);
+  }
+}
+
+.volume-control-component:hover {
+  input[type="range"] {
+    overflow: visible;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    /* Override default look */
+    -webkit-appearance: none;
     appearance: none;
-    margin-top: -2.5px; /* Centers thumb on the track */
-    border-radius: 20px;
-    transition: all ease .5s;
+    /* Centers thumb on the track */
+    margin-top: 0;
 
-    /*custom styles*/
-    background-color: #5cd5eb;
-    height: 11px;
-    width: 11px;
+    /* Custom styles */
+    border: 0.6rem getPrimary(500) solid;
+    box-shadow: none;
   }
 
-  input[type="range"]:focus::-moz-range-thumb {
-    border: 1px solid #053a5f;
-    outline: 2px solid #053a5f;
-  }
+  input[type="range"]::-moz-range-thumb {
+    /* Centers thumb on the track */
+    margin-top: 0;
 
-  &__icon {
-  }
-
-  &:hover {
-    background-color: #444;
-
-    #{$rootClass}__slider {
-    }
+    /* Custom styles */
+    border: 0.6rem getPrimary(500) solid;
+    box-shadow: none;
   }
 }

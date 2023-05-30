@@ -14,6 +14,7 @@ export class VolumeControlComponent {
         0, 1, 40, 80
     ];
 
+    public isHovered = false;
     public inputValue: number = this.getFromLocalStorage('inputValue', MAX_INPUT_VALUE);
     private previousValueState: number = this.getFromLocalStorage('inputValue', this.inputValue);
 
@@ -93,6 +94,13 @@ export class VolumeControlComponent {
                     ? currentIndex
                     : accumulator, 0
         );
+    }
 
+    public setOnHoverStyles(): any {
+        return {
+            background: this.isHovered
+                ? `linear-gradient(to right, #1db954 ${this.inputValue}%, #4d4d4d ${this.inputValue}%)`
+                : `#4d4d4d`
+        };
     }
 }

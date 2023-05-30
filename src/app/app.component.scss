@@ -4,7 +4,7 @@ body {
   height: 100vh;
   width: 100vw;
 
-  background: color(black);
+  background: getPrimary(100);
 
   footer {
     position: fixed;

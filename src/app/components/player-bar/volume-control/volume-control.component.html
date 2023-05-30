@@ -1,11 +1,16 @@
-<body class="volume-control-component">
-    <img src="{{ getVolumeIcon() }}" class="volume-control-component__icon" (click)="muteButtonAction()" alt="Volume Icon"/>
+<body class="volume-control-component" (mouseover)="isHovered = true" (mouseout)="isHovered = false">
+    <img
+            src="{{ getVolumeIcon() }}"
+            class="volume-control-component__icon"
+            (click)="muteButtonAction()"
+            alt="Volume Icon"/>
     <input
             type="range"
             min="0"
             max="100"
             [(ngModel)]="inputValue"
             (input)="onInputUpdate()"
+            [ngStyle]="setOnHoverStyles()"
             class="volume-control-component__slider"
     >
 </body>
