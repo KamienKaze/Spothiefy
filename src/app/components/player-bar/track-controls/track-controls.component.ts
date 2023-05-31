@@ -26,10 +26,14 @@ export class TrackControlsComponent {
   public songDuration: number = 242;
   public songProgress: number = 0;
 
+  // Progress bar
+  public isHovered: boolean = false;
+
   public changePlayingState() {
     this.isPlaying = !this.isPlaying;
   }
 
+  // Icon methods
   public getPlayIcon(): string {
     return ICON_PATHS.playIcon;
   }
@@ -42,7 +46,9 @@ export class TrackControlsComponent {
   public getPrevIcon(): string {
     return ICON_PATHS.prevIcon;
   }
+  // -----------------------------------------
 
+  // Labels management
   private calculateTime(time: number) {
     let minutes = Math.trunc(time / 60);
     let seconds = time - (minutes * 60);
@@ -60,6 +66,17 @@ export class TrackControlsComponent {
   public getSongDuration(): string {
     return this.calculateTime(this.songDuration);
   }
+  // -----------------------------------------
 
+  // Progress bar styles
+  public setOnHoverStyles(): any {
 
+    let percents = (this.songProgress / this.songDuration) * 100;
+
+    return {
+      background: this.isHovered
+          ? `linear-gradient(to right, #1db954 ${ percents }%, #4d4d4d ${ percents }%)`
+          : `#4d4d4d`
+    };
+  }
 }

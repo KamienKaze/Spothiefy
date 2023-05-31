@@ -20,6 +20,9 @@
             max="{{ songDuration }}"
             value="{{ songProgress }}"
             [(ngModel)] = "songProgress"
+            (mouseover)="isHovered = true"
+            (mouseout)="isHovered = false"
+            [ngStyle]="setOnHoverStyles()"
     >
     <label>
       {{ getSongDuration() }}

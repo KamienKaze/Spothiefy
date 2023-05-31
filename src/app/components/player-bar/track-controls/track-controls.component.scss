@@ -11,7 +11,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  row-gap: 0.8rem;
+  row-gap: 1rem;
 
   &__button-container {
 
@@ -92,17 +92,111 @@
     &__play-pause-btn:active {
       transform: scale(1);
     }
+  }
 
+  &__progress-bar {
 
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0.1rem;
+
+    label {
+      color: getPrimary(400);
+      font-size: x-small;
+      margin-left: 0.8rem;
+      margin-right: 0.8rem;
+      user-select: none;
+    }
+
+    /* PROGRESS BAR STYLES */
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+
+      height: 0.5rem;
+      width: 80%;
+
+      border-radius: 5px;
+      overflow: hidden;
+
+    }
+
+    /***** Chrome, Safari, Opera and Edge Chromium styles *****/
+    /* Slider track */
+    input[type="range"]::-webkit-slider-runnable-track {
+      height: 1.1rem;
+    }
+
+    /* Slider thumb */
+    input[type="range"]::-webkit-slider-thumb {
+      /* Override default look */
+      -webkit-appearance: none;
+      appearance: none;
+      /* Centers thumb on the track */
+      margin-top: 0.3rem;
+
+      /* Custom styles */
+      background: getPrimary(500);
+      height: 0.5rem;
+      width: 0.5rem;
+      border-radius: 50%;
+      box-shadow: -403px 0 0 400px getPrimary(500);
+    }
+
+    /******** Firefox styles ********/
+    /* Slider track */
+    input[type="range"]::-moz-range-track {
+      height: 1.2rem;
+    }
+
+    /* slider thumb */
+    input[type="range"]::-moz-range-thumb {
+      /* Centers thumb on the track */
+      margin-top: 0.35rem;
+
+      /* Custom styles */
+      background: getPrimary(500);
+      height: 0.5rem;
+      width: 0.5rem;
+      border-radius: 50%;
+      box-shadow: -403px 0 0 400px getPrimary(500);
+    }
+
+    input[type="range"]:hover {
+      overflow: visible;
+    }
+
+    /***** Chrome, Safari, Opera and Edge Chromium styles *****/
+    /* slider thumb */
+    input[type="range"]:hover::-webkit-slider-thumb {
+      /* Override default look */
+      -webkit-appearance: none;
+      appearance: none;
+      /* Centers thumb on the track */
+      margin-top: 0;
+
+      /* Custom styles */
+      border: 0.6rem getPrimary(500) solid;
+      box-shadow: none;
+    }
+
+    /******** Firefox styles ********/
+    /* slider thumb */
+    input[type="range"]:hover::-moz-range-thumb {
+      /* Centers thumb on the track */
+      margin-top: 0;
+
+      /* Custom styles */
+      border: 0.6rem getPrimary(500) solid;
+      box-shadow: none;
+    }
   }
 }
-label {
-  color: getPrimary(400);
-  font-size: x-small;
-  margin-left: 0.8rem;
-  margin-right: 0.8rem;
-  user-select: none;
-}
+
 
 
 
