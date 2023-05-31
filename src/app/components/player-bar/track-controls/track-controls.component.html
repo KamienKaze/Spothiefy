@@ -1,13 +1,13 @@
 <body class="track-controls-component">
   <div class="track-controls-component__button-container">
-    <button class="track-controls-component__prev-next-btn">
-      <img src="{{ getPrevIcon() }}" class="track-controls-component__prev-next-icon" alt="Previous song">
+    <button class="track-controls-component__button-container__prev-next-btn">
+      <img src="{{ getPrevIcon() }}" alt="Previous song">
     </button>
-    <button class="track-controls-component__play-pause-btn" (click)="changePlayingState()">
-      <img src="{{ isPlaying ? getPauseIcon() : getPlayIcon() }}" class="track-controls-component__play-pause-icon" alt="Play/Pause song">
+    <button class="track-controls-component__button-container__play-pause-btn" (click)="changePlayingState()">
+      <img src="{{ isPlaying ? getPauseIcon() : getPlayIcon() }}" alt="Play/Pause song">
     </button>
-    <button class="track-controls-component__prev-next-btn">
-      <img src="{{ getNextIcon() }}" class="track-controls-component__prev-next-icon" alt="Next song">
+    <button class="track-controls-component__button-container__prev-next-btn">
+      <img src="{{ getNextIcon() }}" alt="Next song">
     </button>
   </div>
   <div class="track-controls-component__progress-bar">
