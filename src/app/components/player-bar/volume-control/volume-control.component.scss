@@ -29,7 +29,6 @@
             brightness(89%)
             contrast(93%);
   }
-
   &__icon:hover {
     filter: none;
   }
@@ -89,10 +88,13 @@
 }
 
 .volume-control-component:hover {
+
   input[type="range"] {
     overflow: visible;
   }
 
+  /***** Chrome, Safari, Opera and Edge Chromium styles *****/
+  /* slider thumb */
   input[type="range"]::-webkit-slider-thumb {
     /* Override default look */
     -webkit-appearance: none;
@@ -105,6 +107,8 @@
     box-shadow: none;
   }
 
+  /******** Firefox styles ********/
+  /* slider thumb */
   input[type="range"]::-moz-range-thumb {
     /* Centers thumb on the track */
     margin-top: 0;
