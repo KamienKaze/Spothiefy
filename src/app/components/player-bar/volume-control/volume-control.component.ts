@@ -96,10 +96,10 @@ export class VolumeControlComponent {
         );
     }
 
-    public setOnHoverStyles(): any {
+    public setOnHoverStyles(): object {
         return {
             background: this.isHovered
-                ? `linear-gradient(to right, #1db954 ${this.inputValue}%, #4d4d4d ${this.inputValue}%)`
+                ? `linear-gradient(to right, #fff ${this.inputValue}%, #4d4d4d ${this.inputValue}%)`
                 : `#4d4d4d`
         };
     }

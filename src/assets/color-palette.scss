@@ -1,3 +1,5 @@
+// ALL COLORS USED IN APPLICATION
+
 $black: #000000;
 $dark-gray: #121212;
 $medium-gray: #4d4d4d;
@@ -19,11 +21,24 @@ $accent: (
         100: $green
 );
 
-
 @function getPrimary($color) {
   @return map-get($primary, $color);
 }
 
 @function getAccent($color) {
   @return map-get($accent, $color);
+}
+
+// PROVIDING COLORS FOR TYPESCRIPT
+// ADD "color-provider" ID TO APP-COMPONENT STYLES FILE!
+
+#color-provider {
+
+  @each $name, $color in $primary {
+    --primary-#{$name}: #{$color};
+  }
+
+  @each $name, $color in $accent {
+    --accent-#{$name}: #{$color};
+  }
 }

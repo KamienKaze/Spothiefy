@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {ColorProviderService} from "./colors-provider/color-provider.service";
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,12 @@ import {Component} from '@angular/core';
 })
 
 export class AppComponent {
-  title = 'Spothiefy';
+
+  ngOnInit() {
+    this.colorProvider.loadColors();
+  }
+
+  constructor(private colorProvider: ColorProviderService) {
+
+  }
 }

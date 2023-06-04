@@ -8,6 +8,8 @@ import { CurrentSongComponent } from './components/player-bar/current-song/curre
 import { TrackControlsComponent } from './components/player-bar/track-controls/track-controls.component';
 import { VolumeControlComponent } from './components/player-bar/volume-control/volume-control.component';
 import { FormsModule } from "@angular/forms";
+import {APP_INITIALIZER} from "@angular/core";
+import {ColorProviderService} from "./colors-provider/color-provider.service";
 
 @NgModule({
   declarations: [
