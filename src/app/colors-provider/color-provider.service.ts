@@ -1,8 +1,11 @@
 import {Injectable} from '@angular/core';
 
-const CSS_PREFIX = `--`;
-const PRIMARY_PREFIX = `primary`;
-const ACCENT_PREFIX = `accent`;
+type ColorPalette = Map<string, Map<string, string>>;
+
+const CSS_PREFIX: string = `--`;
+const PRIMARY_PREFIX: string = `primary`;
+const ACCENT_PREFIX: string = `accent`;
+const COLOR_TYPES: Array<string> = [PRIMARY_PREFIX, ACCENT_PREFIX];
 
 @Injectable({
     providedIn: 'root'
@@ -10,22 +13,45 @@ const ACCENT_PREFIX = `accent`;
 
 export class ColorProviderService {
 
-    colorTypes: Array<string> = [PRIMARY_PREFIX, ACCENT_PREFIX];
+    public colorPalette: ColorPalette = new Map<string, Map<string, string>>();
 
-    public loadColors(): void {
-        const colorsHolder = document.getElementById('color-provider');
-        if (colorsHolder) {
-            const styles = window.getComputedStyle(colorsHolder);
-
-            this.colorTypes.forEach((colorType: string) => {
-                let shadeNumber: number = 100;
-
-                while (styles.getPropertyValue(`${CSS_PREFIX}${colorType}-${shadeNumber}`)) {
-
-                    console.log(`${CSS_PREFIX}${colorType}-${shadeNumber}: ${styles.getPropertyValue(`${CSS_PREFIX}${colorType}-${shadeNumber}`)}`)
-                    shadeNumber += 100;
-                }
-            });
+    public runColorProvider() {
+        this.loadColors()
+    }
+    private async loadColors() {
+        try {
+            this.colorPalette = await this.loadColorPalettePromise();
+        } catch (error) {
+            console.log(error);
         }
+    }
+    private loadColorPalettePromise(): Promise<ColorPalette> {
+        const colorsProvider = document.getElementById('color-provider');
+
+        if (colorsProvider) {
+            return Promise.resolve(this.readColorsFromProvider(colorsProvider));
+        } else {
+            return Promise.reject("Color provider not found");
+        }
+    }
+    private readColorsFromProvider(colorsProvider: HTMLElement): ColorPalette {
+        const styles = window.getComputedStyle(colorsProvider);
+
+        let colorPalette: ColorPalette = new Map<string, Map<string, string>>();
+
+        COLOR_TYPES.forEach((colorType: string) => {
+            let shadeNumber: number = 100;
+            let colors: Map<string, string> = new Map<string, string>();
+
+            while (styles.getPropertyValue(`${CSS_PREFIX}${colorType}-${shadeNumber}`)) {
+
+                colors.set(`${shadeNumber}`, `${styles.getPropertyValue(`${CSS_PREFIX}${colorType}-${shadeNumber}`)}`)
+                shadeNumber += 100;
+            }
+
+            colorPalette.set(`${colorType}`, colors);
+        });
+
+        return colorPalette;
     }
 }

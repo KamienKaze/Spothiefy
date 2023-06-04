@@ -10,8 +10,9 @@ import {ColorProviderService} from "./colors-provider/color-provider.service";
 export class AppComponent {
 
   ngOnInit() {
-    this.colorProvider.loadColors();
+    this.colorProvider.runColorProvider();
   }
+
 
   constructor(private colorProvider: ColorProviderService) {
 
