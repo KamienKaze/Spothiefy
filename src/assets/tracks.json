@@ -22,5 +22,9 @@
     "title": "Human",
     "thumbnail_url": "./thumbnails/Rag'n'Bone_Man_-_Human.mp3",
     "music_url": "./tracks/Rag'n'Bone_Man_-_Human.mp3"
-  }
+  },
+
+  "tracks": [
+
+  ]
 }

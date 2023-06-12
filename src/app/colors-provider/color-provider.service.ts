@@ -1,11 +1,11 @@
 import {Injectable} from '@angular/core';
 
-type ColorPalette = Map<string, Map<string, string>>;
+//type ColorPalette = Map<string, Map<string, string>>;
 
-const CSS_PREFIX: string = `--`;
-const PRIMARY_PREFIX: string = `primary`;
-const ACCENT_PREFIX: string = `accent`;
-const COLOR_TYPES: Array<string> = [PRIMARY_PREFIX, ACCENT_PREFIX];
+//const CSS_PREFIX: string = `--`;
+//const PRIMARY_PREFIX: string = `primary`;
+//const ACCENT_PREFIX: string = `accent`;
+//const COLOR_TYPES: Array<string> = [PRIMARY_PREFIX, ACCENT_PREFIX];
 
 @Injectable({
     providedIn: 'root'
@@ -13,8 +13,18 @@ const COLOR_TYPES: Array<string> = [PRIMARY_PREFIX, ACCENT_PREFIX];
 
 export class ColorProviderService {
 
-    public colorPalette: ColorPalette = new Map<string, Map<string, string>>();
+    public static getPrimary100: string = "#000000";
+    public static getPrimary200: string = "#121212";
+    public static getPrimary300: string = "#4d4d4d";
+    public static getPrimary400: string = "#b2b2b2";
+    public static getPrimary500: string = "#ffffff";
+    public static getAccent100: string = "#1db955";
 
+    //---------------TO-DO---------------
+
+    //public colorPalette: ColorPalette = new Map<string, Map<string, string>>();
+
+    /*
     public runColorProvider() {
         this.loadColors()
     }
@@ -54,4 +64,5 @@ export class ColorProviderService {
 
         return colorPalette;
     }
+    */
 }

@@ -1,0 +1,35 @@
+@import "../../../../assets/color-palette";
+
+:host {
+
+  display: flex;
+  flex-direction: row;
+  column-gap: 1.3rem;
+
+  .thumbnail {
+    width: 6rem;
+    border-radius: 5px;
+  }
+
+  .info-container {
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.2rem;
+    justify-content: center;
+    align-items: flex-start;
+    user-select: none;
+
+    &__title {
+      color: getPrimary(500);
+      font-size: 1.5rem;
+      font-weight: bolder;
+    }
+
+    &__artist {
+      color: getPrimary(400);
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  }
+}

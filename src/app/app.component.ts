@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {ColorProviderService} from "./colors-provider/color-provider.service";
 
 @Component({
   selector: 'app-root',
@@ -8,13 +7,7 @@ import {ColorProviderService} from "./colors-provider/color-provider.service";
 })
 
 export class AppComponent {
-
-  ngOnInit() {
-    this.colorProvider.runColorProvider();
-  }
-
-
-  constructor(private colorProvider: ColorProviderService) {
+  constructor() {
 
   }
 }

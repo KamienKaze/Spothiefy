@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'player-bar',
+  selector: 'app-player-bar',
   templateUrl: './player-bar.component.html',
   styleUrls: ['./player-bar.component.scss']
 })

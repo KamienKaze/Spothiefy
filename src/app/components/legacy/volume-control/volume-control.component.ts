@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {ColorProviderService} from "../../../colors-provider/color-provider.service";
 
 const MAX_INPUT_VALUE = 100;
 const MIN_INPUT_VALUE = 0;
@@ -99,8 +100,8 @@ export class VolumeControlComponent {
     public setOnHoverStyles(): object {
         return {
             background: this.isHovered
-                ? `linear-gradient(to right, #fff ${this.inputValue}%, #4d4d4d ${this.inputValue}%)`
-                : `#4d4d4d`
+                ? `linear-gradient(to right, ${ColorProviderService.getAccent100} ${this.inputValue}%, ${ColorProviderService.getPrimary300} ${this.inputValue}%)`
+                : `${ColorProviderService.getPrimary300}`
         };
     }
 }
