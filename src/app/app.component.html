@@ -1,7 +1,22 @@
-<article>
-    <app-nav-menu></app-nav-menu>
-    <app-article></app-article>
-</article>
-<footer>
-    <app-player-bar></app-player-bar>
-</footer>
+<div class="app-contents">
+    <div class="nav-container" [ngStyle]="getNavWidth()">
+        <div class="nav-button-container">
+            <nav-checkbox></nav-checkbox>
+        </div>
+        <div class="library-container">
+            <nav-checkbox></nav-checkbox>
+            <app-library />
+        </div>
+    </div>
+    <div class="nav-container-resize" (mousedown)="startResizing()" (window:mouseup)="endResizing()">
+        <div class="nav-container-resize__area">
+            <div class="nav-container-resize__area__handle"></div>
+        </div>
+    </div>
+    <div class="article-container" [ngStyle]="getArticleWidth()">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+<div class="app-player-bar">
+    <app-player-bar/>
+</div>

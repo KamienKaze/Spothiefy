@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NavButtonComponent } from './nav-button.component';
+import { NavCheckboxComponent } from './nav-checkbox.component';
 
-describe('NavButtonComponent', () => {
-  let component: NavButtonComponent;
-  let fixture: ComponentFixture<NavButtonComponent>;
+describe('NavCheckboxComponent', () => {
+  let component: NavCheckboxComponent;
+  let fixture: ComponentFixture<NavCheckboxComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NavButtonComponent ]
+      declarations: [ NavCheckboxComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(NavButtonComponent);
+    fixture = TestBed.createComponent(NavCheckboxComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

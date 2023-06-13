@@ -9,8 +9,10 @@ import { VolumeControlComponent } from './components/legacy/volume-control/volum
 import { FormsModule } from "@angular/forms";
 import {ColorProviderService} from "./colors-provider/color-provider.service";
 import { PlayerBarComponent } from './components/player-bar/player-bar.component';
-import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
-import { ArticleComponent } from './components/article/article.component';
+import { LibraryComponent } from './components/library/library.component';
+import { HomeComponent } from './components/home/home.component';
+import { NavCheckboxComponent } from './components/nav-checkbox/nav-checkbox.component';
+
 
 @NgModule({
   declarations: [
@@ -19,8 +21,9 @@ import { ArticleComponent } from './components/article/article.component';
     TrackControlsComponent,
     VolumeControlComponent,
     PlayerBarComponent,
-    NavMenuComponent,
-    ArticleComponent,
+    LibraryComponent,
+    HomeComponent,
+    NavCheckboxComponent,
   ],
     imports: [
         BrowserModule,

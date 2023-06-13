@@ -8,6 +8,9 @@ $white: #ffffff;
 
 $green: #1db955;
 
+// ALL FILTERS USED IN APPLICATION
+
+
 
 $primary: (
         100: $black,
@@ -27,6 +30,14 @@ $accent: (
 
 @function getAccent($color) {
   @return map-get($accent, $color);
+}
+
+@function getPrimarySvgFilter() {
+
+}
+
+@function getAccentSvgFilter() {
+
 }
 
 // PROVIDING COLORS FOR TYPESCRIPT

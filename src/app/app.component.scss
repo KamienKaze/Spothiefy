@@ -1,25 +1,91 @@
 @import "./../assets/color-palette.scss";
 
 :host {
-  $rootClass: &;
+
+  div{
+    color: white;
+  }
+
+  $component-gap: 0.5rem;
+  $player-bar-height: 5.5rem;
 
   width: 100%;
   height: 100%;
   background: getPrimary(100);
 
-  article {
+  .app-contents {
+    width: calc(100% - ($component-gap * 2));
+    height: calc(100% - $player-bar-height - $component-gap);
+
+    margin-top: $component-gap;
+    margin-left: $component-gap;
+    margin-right: $component-gap;
+
     display: flex;
     flex-direction: row;
-    column-gap: 0.7rem;
+    column-gap: calc($component-gap / 2);
 
-    width: 100%;
-    height: 90%;
+    .nav-container {
+      height: 100%;
+      background: none;
+
+      display: flex;
+      flex-direction: column;
+      row-gap: $component-gap;
+
+      .nav-button-container {
+        width: 100%;
+        background: getPrimary(200);
+        border-radius: 10px;
+      }
+
+      .library-container {
+        width: 100%;
+        height: 100%;
+        background: getPrimary(200);
+
+        display: flex;
+        flex-direction: column;
+
+        border-radius: 10px;
+      }
+    }
+
+    .nav-container-resize {
+      width: 0;
+      height: 100%;
+
+      &__area {
+        position: relative;
+        width: $component-gap;
+        height: 100%;
+        right: $component-gap;
+        display: flex;
+        justify-content: center;
+
+        &:active, &:hover {
+          cursor: ew-resize;
+
+          .nav-container-resize__area__handle {
+            width: 0.01rem;
+            height: 100%;
+            background: getPrimary(300);
+          }
+        }
+      }
+    }
+
+    .article-container {
+      min-width: 25rem;
+      height: 100%;
+      background: none;
+
+      display: flex;
+    }
   }
 
-  footer {
-    display: flex;
-
+  .app-player-bar {
     width: 100%;
-    height: 10%;
+    height: $player-bar-height;
   }
 }
