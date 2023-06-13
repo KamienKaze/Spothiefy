@@ -1,0 +1,23 @@
+@import "./../../../assets/color-palette.scss";
+
+:host {
+  margin: 1.2rem;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  column-gap: 1rem;
+
+  .icon {
+    mask: url("./../../../assets/icons/buttons/home/home-not-active.svg");
+    background-color: white;
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+
+  .label {
+    color: getPrimary(500);
+    font-weight: bold;
+  }
+}
