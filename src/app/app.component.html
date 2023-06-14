@@ -1,22 +1,10 @@
-<div class="app-contents">
-    <div class="nav-container" [ngStyle]="getNavWidth()">
-        <div class="nav-button-container">
-            <nav-checkbox name="Home" src="home"></nav-checkbox>
-        </div>
-        <div class="library-container">
-            <nav-checkbox name="Biblioteka" src="library"></nav-checkbox>
-            <app-library />
+<div class="main-content" [ngStyle]="getCursor()">
+    <app-nav-section class="nav-section" [ngStyle]="getNavWidth()"/>
+    <div class="resizer">
+        <div class="resizer-range" (mousedown)="startResizing()" (window:mouseup)="endResizing()">
+            <div class="handle"></div>
         </div>
     </div>
-    <div class="nav-container-resize" (mousedown)="startResizing()" (window:mouseup)="endResizing()">
-        <div class="nav-container-resize__area">
-            <div class="nav-container-resize__area__handle"></div>
-        </div>
-    </div>
-    <div class="article-container" [ngStyle]="getArticleWidth()">
-        <router-outlet></router-outlet>
-    </div>
+    <app-article-section class="article-section" [ngStyle]="getArticleWidth()"/>
 </div>
-<div class="app-player-bar">
-    <app-player-bar/>
-</div>
+<app-player-bar-section class="player-bar"/>

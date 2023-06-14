@@ -1,11 +1,13 @@
+@import "./assets/color-palette.scss";
+
 html {
   background: black;
 
   * {
-    font-family: Arial;
-    margin: 0;
-
+    font-family: Arial, serif;
     user-select: none;
+
+    margin: 0;
   }
 
   body {

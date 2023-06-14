@@ -1,92 +1,71 @@
 @import "./../assets/color-palette.scss";
 
 :host {
-
-  div{
-    color: white;
-  }
-
-  $component-gap: 0.5rem;
-  $player-bar-height: 5.5rem;
-
   width: 100%;
   height: 100%;
-  background: getPrimary(100);
 
-  .app-contents {
-    width: calc(100% - ($component-gap * 2));
-    height: calc(100% - $player-bar-height - $component-gap);
+  display: flex;
+  flex-direction: column;
+
+  $component-gap: 0.5rem;
+
+  .main-content {
+    width: calc(100% - (2 * $component-gap));
+    height: calc(100% - $component-gap);
 
     margin-top: $component-gap;
     margin-left: $component-gap;
     margin-right: $component-gap;
 
+    background: none;
+
     display: flex;
     flex-direction: row;
     column-gap: calc($component-gap / 2);
 
-    .nav-container {
-      min-width: 16rem;
+    .nav-section {
       height: 100%;
-      background: none;
 
-      display: flex;
-      flex-direction: column;
-      row-gap: $component-gap;
-
-      .nav-button-container {
-        width: 100%;
-        background: getPrimary(200);
-        border-radius: 10px;
-      }
-
-      .library-container {
-        width: 100%;
-        height: 100%;
-        background: getPrimary(200);
-
-        display: flex;
-        flex-direction: column;
-
-        border-radius: 10px;
-      }
     }
 
-    .nav-container-resize {
+    .resizer {
       width: 0;
       height: 100%;
 
-      &__area {
+      &-range {
         position: relative;
-        width: $component-gap;
+
+        $resize-range: 0.8rem;
+
+        width: $resize-range;
         height: 100%;
-        right: $component-gap;
+        right: calc(($component-gap / 2) + ($resize-range / 2));
+
         display: flex;
         justify-content: center;
 
         &:active, &:hover {
+
           cursor: ew-resize;
 
-          .nav-container-resize__area__handle {
-            width: 0.01rem;
+          .handle {
+            width: 1px;
             height: 100%;
+
             background: getPrimary(300);
           }
         }
       }
     }
 
-    .article-container {
-      min-width: 25rem;
+    .article-section {
       height: 100%;
-      background: none;
-
-      display: flex;
     }
   }
 
-  .app-player-bar {
+  .player-bar {
     width: 100%;
-    height: $player-bar-height;
+    height: 6.1rem;
+    background: getPrimary(100);
   }
 }

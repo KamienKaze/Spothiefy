@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PlayerBarComponent } from './player-bar.component';
+import { NavSectionComponent } from './nav-section.component';
 
-describe('PlayerBarComponent', () => {
-  let component: PlayerBarComponent;
-  let fixture: ComponentFixture<PlayerBarComponent>;
+describe('NavSectionComponent', () => {
+  let component: NavSectionComponent;
+  let fixture: ComponentFixture<NavSectionComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PlayerBarComponent ]
+      declarations: [ NavSectionComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PlayerBarComponent);
+    fixture = TestBed.createComponent(NavSectionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

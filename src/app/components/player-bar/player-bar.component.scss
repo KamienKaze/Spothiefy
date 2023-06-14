@@ -1,9 +1,0 @@
-@import "./../../../assets/color-palette.scss";
-
-:host {
-  width: 100%;
-  height: 100%;
-  background: getPrimary(100);
-
-  display: flex;
-}

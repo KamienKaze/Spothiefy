@@ -1,9 +1,0 @@
-<label for="checkbox_{{name | lowercase}}">
-    <input class="checkbox"
-           type="checkbox"
-           disabled="false"
-           id="checkbox_{{name | lowercase}}"
-           [ngClass]="getIconClass() | lowercase"
-           [(ngModel)]="isActive">
-    <div>{{name}}</div>
-</label>
