@@ -26,6 +26,7 @@
     column-gap: calc($component-gap / 2);
 
     .nav-container {
+      min-width: 16rem;
       height: 100%;
       background: none;
 

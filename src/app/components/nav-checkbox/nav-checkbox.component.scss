@@ -1,0 +1,68 @@
+@import "./../../../assets/color-palette.scss";
+
+$icons-path: "./../../../assets/icons/";
+$home-icon: "home";
+$library-icon: "library";
+
+:host {
+
+  label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    input {
+      -webkit-appearance: none;
+      appearance: none;
+
+      width: 1.5rem;
+      height: 1.5rem;
+
+      background-color: getPrimary(400);
+      transition: 0.3s;
+    }
+
+    div {
+      color: getPrimary(400);
+      transition: 0.3s;
+    }
+
+    &:hover{
+
+      input {
+        background-color: getPrimary(500);
+        transition: 0.3s;
+      }
+
+      div {
+        color: getPrimary(500);
+        transition: 0.3s;
+      }
+    }
+
+    input:checked {
+      -webkit-appearance: none;
+      appearance: none;
+
+      background-color: getPrimary(500);
+    }
+
+    input:checked + div {
+      color: getPrimary(500);
+    }
+
+    .home-true {
+      mask: url($icons-path + $home-icon + "/true.svg");
+    }
+    .home-false {
+      mask: url($icons-path + $home-icon + "/false.svg");
+    }
+
+    .library-true {
+      mask: url($icons-path + $library-icon + "/true.svg");
+    }
+    .library-false {
+      mask: url($icons-path + $library-icon + "/false.svg");
+    }
+  }
+}
