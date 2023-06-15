@@ -6,22 +6,19 @@
   $not-active-name: "/false.svg";
 
   container-type: inline-size;
-  width: 10rem;
-  height: 3.8rem;
+  width: 8rem;
+  height: 1.4rem;
 
   .nav-checkbox {
-    width: 10rem;
-    height: 3.8rem;
+    width: 8rem;
+    height: 1.4rem;
 
     display: flex;
     flex-direction: row;
     align-items: center;
+    column-gap: 1.2rem;
 
     cursor: pointer;
-
-    div {
-      margin-left: 1.2rem;
-    }
 
     .checkbox-icon {
       width: 1.4rem;
@@ -75,7 +72,6 @@
       color: getPrimary(500);
     }
   }
-
   .not-active {
     .home {
       mask: url($icon-path + "home" + $not-active-name);

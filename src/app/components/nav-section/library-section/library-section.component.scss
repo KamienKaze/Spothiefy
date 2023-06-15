@@ -1,8 +1,9 @@
 @import "./../../../../assets/color-palette.scss";
 
 :host {
-  width: 100%;
+  width: calc(100% - (1.2rem * 2));
   height: 100%;
+  padding: 1.2rem;
 
   background: getPrimary(200);
 
@@ -14,10 +15,11 @@
     opacity: 0;
     visibility: hidden;
 
-    width: 9.1rem;
+    width: fit-content;
     height: 1rem;
     padding: 0.5rem;
-    transform: translateY(-1.7rem);
+    justify-self: center;
+    transform: translateY(-2.7rem) translateX(-0.8rem);
 
     font-weight: bold;
     font-size: 0.8rem;
@@ -29,6 +31,7 @@
 
     border-radius: 10px;
 
+    pointer-events: none;
     z-index: 1;
   }
   .library-checkbox:hover + .library-checkbox-tooltip {

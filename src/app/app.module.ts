@@ -14,6 +14,7 @@ import { PlayerBarSectionComponent } from './components/player-bar-section/playe
 import { NavButtonsContainerComponent } from './components/nav-section/nav-buttons-container/nav-buttons-container.component';
 import { LibrarySectionComponent } from './components/nav-section/library-section/library-section.component';
 import { NavCheckboxComponent } from './components/nav-section/reusable/nav-checkbox/nav-checkbox.component';
+import { HomeComponent } from './components/article-section/home/home.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { NavCheckboxComponent } from './components/nav-section/reusable/nav-chec
     NavButtonsContainerComponent,
     LibrarySectionComponent,
     NavCheckboxComponent,
+    HomeComponent,
   ],
     imports: [
         BrowserModule,
