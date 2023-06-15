@@ -8,5 +8,36 @@
 
   border-radius: 10px;
 
+  display: flex;
 
+  .library-checkbox-tooltip {
+    opacity: 0;
+    visibility: hidden;
+
+    width: 9.1rem;
+    height: 1rem;
+    padding: 0.5rem;
+    transform: translateY(-1.7rem);
+
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-align: center;
+    color: getPrimary(500);
+
+    background-color: #232323;
+    position: absolute;
+
+    border-radius: 10px;
+
+    z-index: 1;
+  }
+  .library-checkbox:hover + .library-checkbox-tooltip {
+
+    transition-property: opacity;
+    transition-duration: 0.2s;
+    transition-delay: 0.5s;
+    opacity: 100%;
+    visibility: visible;
+
+  }
 }
