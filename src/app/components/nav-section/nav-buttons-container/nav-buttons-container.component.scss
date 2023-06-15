@@ -1,0 +1,9 @@
+@import "./../../../../assets/color-palette.scss";
+
+:host {
+  width: 100%;
+
+  background: getPrimary(200);
+
+  border-radius: 10px;
+}

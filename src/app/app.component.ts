@@ -42,12 +42,8 @@ export class AppComponent {
         localStorage.setItem('navWidth', `${this.navWidth}`);
     }
 
-    private changeResizingState(): void {
-        this.isResizing = !this.isResizing;
-    }
-
     public startResizing(): void {
-        this.changeResizingState();
+        this.isResizing = true;
         this.updateNavWidth();
     }
 
@@ -64,6 +60,6 @@ export class AppComponent {
     }
 
     public endResizing(): void {
-        this.changeResizingState()
+        this.isResizing = false;
     }
 }
