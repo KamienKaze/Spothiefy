@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {Observable, fromEvent, takeWhile} from "rxjs";
 
 const MOUSE_MOVEMENT$: Observable<MouseEvent> = fromEvent<MouseEvent>(document, 'mousemove');
-const NAV_BREAKPOINT: number = 17.6; //rem
+const NAV_BREAKPOINT: number = /*17.6*/ 0; //rem
 
 @Component({
     selector: 'app-root',

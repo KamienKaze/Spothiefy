@@ -6,7 +6,8 @@
   $not-active-name: "/false.svg";
 
   container-type: inline-size;
-  width: 8rem;
+
+  width: 100%;
   height: 1.4rem;
 
   .nav-checkbox {
@@ -33,6 +34,7 @@
       transition: 0.3s;
 
       font-weight: bold;
+      display: flex;
     }
 
     &:hover {
@@ -48,13 +50,13 @@
     }
   }
 
-@container (max-width:10 rem) {
-  .nav-checkbox {
-    .checkbox-name {
-      display: none;
+  @container (max-width: 10rem) {
+    .nav-checkbox {
+      .checkbox-name {
+        display: none;
+      }
     }
   }
-}
 
   .active {
     .home {
@@ -81,5 +83,7 @@
     }
   }
 }
+
+
 
 
