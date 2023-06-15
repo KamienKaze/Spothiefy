@@ -6,4 +6,7 @@
   background: getPrimary(200);
 
   border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
 }

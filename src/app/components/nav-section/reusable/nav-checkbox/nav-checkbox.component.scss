@@ -1,0 +1,89 @@
+@import "./../../../../../assets/color-palette.scss";
+
+:host {
+  $icon-path: "./../../../../../assets/icons/";
+  $active-name: "/true.svg";
+  $not-active-name: "/false.svg";
+
+  container-type: inline-size;
+
+  width: 100%;
+
+  .nav-checkbox {
+    width: 100%;
+    height: 3.8rem;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    cursor: pointer;
+
+    div {
+      margin-left: 1.2rem;
+    }
+
+    .checkbox-icon {
+      width: 1.4rem;
+      height: 1.4rem;
+
+      background-color: getPrimary(400);
+      transition: 0.3s;
+    }
+
+    .checkbox-name {
+      color: getPrimary(400);
+      transition: 0.3s;
+
+      font-weight: bold;
+    }
+
+    &:hover {
+      .checkbox-icon {
+        background-color: getPrimary(500);
+        transition: 0.3s;
+      }
+
+      .checkbox-name {
+        color: getPrimary(500);
+        transition: 0.3s;
+      }
+    }
+  }
+
+@container (max-width:10 rem) {
+  .nav-checkbox {
+    .checkbox-name {
+      display: none;
+    }
+  }
+}
+
+  .active {
+    .home {
+      mask: url($icon-path + "home" + $active-name);
+    }
+    .library {
+      mask: url($icon-path + "library" + $active-name);
+    }
+
+    .checkbox-icon {
+      background-color: getPrimary(500);
+    }
+
+    .checkbox-name {
+      color: getPrimary(500);
+    }
+  }
+
+  .not-active {
+    .home {
+      mask: url($icon-path + "home" + $not-active-name);
+    }
+    .library {
+      mask: url($icon-path + "library" + $not-active-name);
+    }
+  }
+}
+
+
