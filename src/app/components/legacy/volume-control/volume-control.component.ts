@@ -15,7 +15,7 @@ export class VolumeControlComponent {
         0, 1, 40, 80
     ];
 
-    public isHovered = false;
+    public isHovered: boolean = false;
     public inputValue: number = this.getFromLocalStorage('inputValue', MAX_INPUT_VALUE);
     private previousValueState: number = this.getFromLocalStorage('inputValue', this.inputValue);
 
