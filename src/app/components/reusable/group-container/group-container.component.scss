@@ -1,13 +1,11 @@
 @import "./../../../../assets/color-palette.scss";
 
 :host {
-  width: calc(100% - (1.2rem * 2));
-  padding: 1.2rem;
+  width: 100%;
 
   background: getPrimary(200);
 
-  border-radius: 10px;
-
   display: flex;
-  flex-direction: column;
+
+  border-radius: 10px;
 }
