@@ -8,6 +8,7 @@
   flex-direction: column;
 
   .main-content {
+
     $component-gap: 0.5rem;
 
     width: calc(100% - (2 * $component-gap));
@@ -33,7 +34,7 @@
       &-range {
         position: relative;
 
-        $resize-range: 0.8rem;
+        $resize-range: 0.4rem;
 
         width: $resize-range;
         height: 100%;

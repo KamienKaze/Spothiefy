@@ -5,6 +5,24 @@ $icon-path: "./../../../../assets/icons/";
 $active-file-name: "/true" + $file-extension;
 $not-active-file-name: "/false" + $file-extension;
 
+@mixin active {
+  .home {
+    mask: url($icon-path + "home" + $active-file-name);
+  }
+
+  .library {
+    mask: url($icon-path + "library" + $active-file-name);
+  }
+
+  .checkbox-icon {
+    background-color: getPrimary(500);
+  }
+
+  .checkbox-name {
+    color: getPrimary(500);
+  }
+}
+
 :host {
   width: 100%;
   height: fit-content;
@@ -13,12 +31,15 @@ $not-active-file-name: "/false" + $file-extension;
   container-type: inline-size;
 
   .checkbox {
-    width: fit-content;
+    width: 100%;
     height: fit-content;
+    padding: 0.5rem;
 
     display: flex;
     flex-direction: row;
     column-gap: 1.2rem;
+
+    cursor: pointer;
 
     .checkbox-icon {
       width: 1.4rem;
@@ -42,10 +63,16 @@ $not-active-file-name: "/false" + $file-extension;
     .library {
       mask: url($icon-path + "library" + $not-active-file-name);
     }
+
+    &:hover {
+      @include active;
+    }
   }
 
   @container host (max-width: 10rem) {
     .checkbox {
+      width: fit-content;
+
       .checkbox-name {
         display: none;
       }
@@ -53,21 +80,7 @@ $not-active-file-name: "/false" + $file-extension;
   }
 
   .active {
-    .home {
-      mask: url($icon-path + "home" + $active-file-name);
-    }
-
-    .library {
-      mask: url($icon-path + "library" + $active-file-name);
-    }
-
-    .checkbox-icon {
-      background-color: getPrimary(500);
-    }
-
-    .checkbox-name {
-      color: getPrimary(500);
-    }
+    @include active;
   }
 }
 

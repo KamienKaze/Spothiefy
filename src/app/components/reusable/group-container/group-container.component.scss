@@ -1,8 +1,8 @@
 @import "./../../../../assets/color-palette.scss";
 
 :host {
-  width: calc(100% - (1.2rem * 2));
-  padding: 1.2rem;
+  width: calc(100% - (0.7rem * 2));
+  padding: 0.7rem;
 
   background: getPrimary(200);
 
