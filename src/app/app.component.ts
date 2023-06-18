@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {Observable, fromEvent, takeWhile} from "rxjs";
 
 const MOUSE_MOVEMENT$: Observable<MouseEvent> = fromEvent<MouseEvent>(document, 'mousemove');
-const NAV_BREAKPOINT: number = /*17.6*/ 0; //rem
+const NAV_BREAKPOINT: number = 17.6; //rem
 
 @Component({
     selector: 'app-root',
@@ -38,18 +38,18 @@ export class AppComponent {
             : {cursor: 'auto'};
     }
 
-    private onWidthUpdate(): void {
-        localStorage.setItem('navWidth', `${this.navWidth}`);
-    }
-
     public startResizing(): void {
         this.isResizing = true;
         this.updateNavWidth();
     }
 
+    public endResizing(): void {
+        this.isResizing = false;
+    }
+
     private updateNavWidth(): void {
         MOUSE_MOVEMENT$.pipe(takeWhile(() => this.isResizing)).subscribe((next: MouseEvent): void => {
-            if(next.clientX > this.convertRemToPx(NAV_BREAKPOINT)) {
+            if (next.clientX > this.convertRemToPx(NAV_BREAKPOINT)) {
                 this.navWidth = next.clientX;
             } else {
                 this.navWidth = this.convertRemToPx(NAV_BREAKPOINT);
@@ -59,7 +59,16 @@ export class AppComponent {
         });
     }
 
-    public endResizing(): void {
-        this.isResizing = false;
+    private onWidthUpdate(): void {
+        localStorage.setItem('navWidth', `${this.navWidth}`);
     }
+
+    private collapseNav(): void {
+        this.navWidth = 0;
+    }
+
+    private expandNav(): void {
+        this.navWidth = this.convertRemToPx(NAV_BREAKPOINT);
+    }
+
 }

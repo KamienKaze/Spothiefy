@@ -12,5 +12,4 @@ export class NavSectionComponent {
 
     public isLibraryCheckboxActive: boolean = false;
     public isLibraryCheckboxLocked: boolean = false;
-
 }
