@@ -7,6 +7,9 @@
 
   .buttons-group {
     height: fit-content;
+
+    display: flex;
+    flex-direction: column;
   }
 
   .library-group {

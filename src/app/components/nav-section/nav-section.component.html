@@ -1,6 +1,10 @@
 <app-group-container class="buttons-group">
-    <app-nav-checkbox name="home"/>
+    <app-nav-checkbox name="home"
+                      [(isActive)]="isHomeCheckboxActive"
+                      [isLocked]="isHomeCheckboxLocked"/>
 </app-group-container>
 <app-group-container class="library-group">
-    <app-nav-checkbox name="library"/>
+    <app-nav-checkbox name="library"
+                      [(isActive)]="isLibraryCheckboxActive"
+                      [isLocked]="isLibraryCheckboxLocked"/>
 </app-group-container>

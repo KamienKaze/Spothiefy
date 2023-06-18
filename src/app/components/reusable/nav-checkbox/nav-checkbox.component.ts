@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
     selector: 'app-nav-checkbox',
@@ -8,12 +8,13 @@ import {Component, Input} from '@angular/core';
 export class NavCheckboxComponent {
 
     @Input('name') public name: string = '';
-    @Input('isActive') private isActive: boolean = false;
     @Input('isLocked') private isLocked: boolean = false;
+    @Input() private isActive: boolean = false;
+    @Output() private isActiveChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
     public changeActiveState(): void {
-        this.isActive = !this.isActive;
-        console.log(this.isActive);
+        if(!this.isLocked) this.isActive = !this.isActive;
+        this.isActiveChange.emit(this.isActive);
     }
 
     public getCLass(): string {
