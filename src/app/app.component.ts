@@ -34,7 +34,7 @@ export class AppComponent {
 
     public getCursor(): object {
         return this.isResizing
-            ? {cursor: 'ew-resize'}
+            ? {cursor: 'col-resize'}
             : {cursor: 'auto'};
     }
 

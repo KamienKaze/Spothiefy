@@ -1,4 +1,4 @@
-<div class="checkbox">
-    <div class="checkbox-icon home"></div>
-    <div class="checkbox-name">Home</div>
+<div class="checkbox" [ngClass]="getCLass()" (click)="changeActiveState()">
+    <div class="checkbox-icon" [ngClass]="name"></div>
+    <div class="checkbox-name">{{name | titlecase}}</div>
 </div>
