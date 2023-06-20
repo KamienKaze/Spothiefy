@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {NavWidthManagerService} from "../../services/nav-width-manager/nav-width-manager.service";
 
 @Component({
     selector: 'app-nav-section',
@@ -12,4 +13,10 @@ export class NavSectionComponent {
 
     public isLibraryCheckboxActive: boolean = true;
     public isLibraryCheckboxLocked: boolean = false;
+
+    public onClickLibrary(): void {
+        NavWidthManagerService.isNavCollapsed
+            ? NavWidthManagerService.expandLibrary()
+            : NavWidthManagerService.collapseLibrary();
+    }
 }

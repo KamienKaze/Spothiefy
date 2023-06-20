@@ -1,9 +1,8 @@
 import {Component} from '@angular/core';
-import {Observable, fromEvent, takeWhile} from "rxjs";
+import {Observable, fromEvent, takeWhile, Subscription} from "rxjs";
 import {NavWidthManagerService} from "./services/nav-width-manager/nav-width-manager.service";
 
 const MOUSE_MOVEMENT$: Observable<MouseEvent> = fromEvent<MouseEvent>(document, 'mousemove');
-const NAV_BREAKPOINT: number = 17.6; //rem
 
 @Component({
     selector: 'app-root',
@@ -13,17 +12,12 @@ const NAV_BREAKPOINT: number = 17.6; //rem
 
 export class AppComponent {
 
-    public navWidth: number = NavWidthManagerService.getNavWidth();
-    private fontSize: number = parseFloat(getComputedStyle(document.documentElement).fontSize);
+    private navWidthSubscription: Subscription = NavWidthManagerService.navWidth.subscribe((width: number): void => {
+        this.navWidth = width;
+    });
+
+    private navWidth: number = NavWidthManagerService.getInitialNavWidth();
     private isResizing: boolean = false;
-
-    private getFromLocalStorage(name: string, def: number): number {
-        return Number.parseInt(localStorage.getItem(name) ?? `${def}`);
-    }
-
-    private convertRemToPx(rem: number) {
-        return rem * this.fontSize;
-    }
 
     public getNavWidth(): object {
         return {"width": `${this.navWidth}px`};
@@ -49,19 +43,8 @@ export class AppComponent {
     }
 
     private updateNavWidth(): void {
-        MOUSE_MOVEMENT$.pipe(takeWhile(() => this.isResizing)).subscribe((next: MouseEvent): void => {
-            ``
-            if (next.clientX > this.convertRemToPx(NAV_BREAKPOINT)) {
-                this.navWidth = next.clientX;
-            } else {
-                this.navWidth = this.convertRemToPx(NAV_BREAKPOINT);
-            }
-
-            this.onWidthUpdate();
+        MOUSE_MOVEMENT$.pipe(takeWhile(() => this.isResizing)).subscribe((mouseData: MouseEvent): void => {
+            NavWidthManagerService.updateNavWidth(mouseData.clientX);
         });
-    }
-
-    private onWidthUpdate(): void {
-        localStorage.setItem('navWidth', `${this.navWidth}`);
     }
 }
