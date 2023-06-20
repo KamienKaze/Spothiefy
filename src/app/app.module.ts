@@ -13,6 +13,7 @@ import { GroupContainerComponent } from './components/reusable/group-container/g
 import { NavSectionComponent } from './components/nav-section/nav-section.component';
 import { ArticleSectionComponent } from './components/article-section/article-section.component';
 import { NavCheckboxComponent } from './components/reusable/nav-checkbox/nav-checkbox.component';
+import {LocalStorageManagerService} from "./services/local-storage-manager/local-storage-manager.service";
 
 
 @NgModule({
@@ -32,7 +33,7 @@ import { NavCheckboxComponent } from './components/reusable/nav-checkbox/nav-che
         AppRoutingModule,
         FormsModule
     ],
-  providers: [],
+  providers: [LocalStorageManagerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

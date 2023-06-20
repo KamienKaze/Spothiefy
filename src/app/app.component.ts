@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {Observable, fromEvent, takeWhile} from "rxjs";
+import {NavWidthManagerService} from "./services/nav-width-manager/nav-width-manager.service";
 
 const MOUSE_MOVEMENT$: Observable<MouseEvent> = fromEvent<MouseEvent>(document, 'mousemove');
 const NAV_BREAKPOINT: number = 17.6; //rem
@@ -12,7 +13,7 @@ const NAV_BREAKPOINT: number = 17.6; //rem
 
 export class AppComponent {
 
-    public navWidth: number = this.getFromLocalStorage('navWidth', this.convertRemToPx(NAV_BREAKPOINT));
+    public navWidth: number = NavWidthManagerService.getNavWidth();
     private fontSize: number = parseFloat(getComputedStyle(document.documentElement).fontSize);
     private isResizing: boolean = false;
 
@@ -49,6 +50,7 @@ export class AppComponent {
 
     private updateNavWidth(): void {
         MOUSE_MOVEMENT$.pipe(takeWhile(() => this.isResizing)).subscribe((next: MouseEvent): void => {
+            ``
             if (next.clientX > this.convertRemToPx(NAV_BREAKPOINT)) {
                 this.navWidth = next.clientX;
             } else {
@@ -62,7 +64,4 @@ export class AppComponent {
     private onWidthUpdate(): void {
         localStorage.setItem('navWidth', `${this.navWidth}`);
     }
-
-
-
 }
