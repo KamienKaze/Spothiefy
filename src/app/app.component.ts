@@ -12,11 +12,7 @@ const MOUSE_MOVEMENT$: Observable<MouseEvent> = fromEvent<MouseEvent>(document, 
 
 export class AppComponent {
 
-    private navWidthSubscription: Subscription = NavWidthManagerService.navWidth.subscribe((width: number): void => {
-        this.navWidth = width;
-    });
-
-    private navWidth: number = NavWidthManagerService.getInitialNavWidth();
+    private navWidth: number = 0;
     private isResizing: boolean = false;
 
     public getNavWidth(): object {
@@ -44,7 +40,7 @@ export class AppComponent {
 
     private updateNavWidth(): void {
         MOUSE_MOVEMENT$.pipe(takeWhile(() => this.isResizing)).subscribe((mouseData: MouseEvent): void => {
-            NavWidthManagerService.updateNavWidth(mouseData.clientX);
+
         });
     }
 }
