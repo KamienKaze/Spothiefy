@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
     selector: 'app-nav-section',
@@ -10,6 +10,6 @@ export class NavSectionComponent {
     public isHomeCheckboxActive: boolean = false;
     public isHomeCheckboxLocked: boolean = false;
 
-    public isLibraryCheckboxActive: boolean = false;
+    public isLibraryCheckboxActive: boolean = true;
     public isLibraryCheckboxLocked: boolean = false;
 }

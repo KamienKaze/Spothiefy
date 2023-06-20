@@ -12,8 +12,8 @@ const NAV_BREAKPOINT: number = 17.6; //rem
 
 export class AppComponent {
 
+    public navWidth: number = this.getFromLocalStorage('navWidth', this.convertRemToPx(NAV_BREAKPOINT));
     private fontSize: number = parseFloat(getComputedStyle(document.documentElement).fontSize);
-    private navWidth: number = this.getFromLocalStorage('navWidth', this.convertRemToPx(NAV_BREAKPOINT));
     private isResizing: boolean = false;
 
     private getFromLocalStorage(name: string, def: number): number {
@@ -63,12 +63,6 @@ export class AppComponent {
         localStorage.setItem('navWidth', `${this.navWidth}`);
     }
 
-    private collapseNav(): void {
-        this.navWidth = 0;
-    }
 
-    private expandNav(): void {
-        this.navWidth = this.convertRemToPx(NAV_BREAKPOINT);
-    }
 
 }
