@@ -90,7 +90,7 @@ export class VolumeControlComponent {
                 accumulator: number,
                 currentValue: number,
                 currentIndex: number
-            ) =>
+            ): number =>
                 currentValue <= this.inputValue
                     ? currentIndex
                     : accumulator, 0

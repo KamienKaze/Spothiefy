@@ -14,4 +14,16 @@ export class NavSectionComponent {
 
     public isLibraryCheckboxActive: boolean = true;
     public isLibraryCheckboxLocked: boolean = false;
+
+    public libraryOnClick(): void {
+        this.isLibraryCheckboxActive
+            ? NavWidthManagerService.expandNavButton()
+            : NavWidthManagerService.collapseNav();
+    }
+
+    ngOnInit() {
+        NavWidthManagerService.isNavExpandedSubject.subscribe((isExpanded: boolean): void => {
+            this.isLibraryCheckboxActive = isExpanded;
+        });
+    }
 }

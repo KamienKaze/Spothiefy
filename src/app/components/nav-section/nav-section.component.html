@@ -6,5 +6,6 @@
 <app-group-container class="library-group">
     <app-nav-checkbox name="library"
                       [(isActive)]="isLibraryCheckboxActive"
-                      [isLocked]="isLibraryCheckboxLocked"/>
+                      [isLocked]="isLibraryCheckboxLocked"
+                      (click)="libraryOnClick()"/>
 </app-group-container>
