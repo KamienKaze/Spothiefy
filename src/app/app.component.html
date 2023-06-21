@@ -1,5 +1,5 @@
 <div class="main-content" [ngStyle]="getCursor()" id="jd">
-    <app-nav-section class="nav-section" [ngStyle]="getNavWidth()"/>
+    <app-nav-section class="nav-section" [ngStyle]="getNavStyles()"/>
     <div class="resizer">
         <div class="resizer-range" (mousedown)="startResizing()" (window:mouseup)="endResizing()">
             <div class="handle"></div>

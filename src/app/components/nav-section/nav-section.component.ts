@@ -12,7 +12,7 @@ export class NavSectionComponent {
     public isHomeCheckboxActive: boolean = false;
     public isHomeCheckboxLocked: boolean = false;
 
-    public isLibraryCheckboxActive: boolean = true;
+    public isLibraryCheckboxActive: boolean = false;
     public isLibraryCheckboxLocked: boolean = false;
 
     public libraryOnClick(): void {

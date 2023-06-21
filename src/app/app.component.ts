@@ -3,8 +3,9 @@ import {Observable, fromEvent, takeWhile, Subscription} from "rxjs";
 import {NavWidthManagerService} from "./services/nav-width-manager/nav-width-manager.service";
 
 const MOUSE_MOVEMENT$: Observable<MouseEvent> = fromEvent<MouseEvent>(document, 'mousemove');
-const NAV_BREAKPOINT: number = 17.6; //rem
-const NAV_MIN_WIDTH: number = 3.8; //rem
+const NAV_BREAKPOINT: number = NavWidthManagerService.getNavBreakpoint(); //rem
+const NAV_MIN_WIDTH: number = NavWidthManagerService.getNavMinWidth(); //rem
+
 
 @Component({
     selector: 'app-root',
@@ -14,20 +15,23 @@ const NAV_MIN_WIDTH: number = 3.8; //rem
 
 export class AppComponent {
 
-    private navWidth: number = 400;
-    private isNavExpanded: boolean = true
+    private navWidth: number = 0;
+    private isNavExpanded: boolean = false;
     private isResizing: boolean = false;
 
-    public getNavWidth(): object {
+    public getNavStyles(): object {
         return this.isNavExpanded
-            ? {'min-width': `${NAV_BREAKPOINT}rem`, "width": `${this.navWidth}px`}
-            : {'min-width': `${NAV_MIN_WIDTH}rem`,'max-width': `${NAV_MIN_WIDTH}rem`,  "width": `${this.navWidth}px`};
+            ? { 'max-width': `none`,
+                'min-width': `${NAV_BREAKPOINT}rem`,
+                "width": `${this.navWidth}px` }
+            : { 'max-width': `${NAV_MIN_WIDTH}rem`,
+                'min-width': `${NAV_MIN_WIDTH}rem`,
+                "width": `${this.navWidth}px`};
     }
 
     public getArticleWidth(): object {
         return {"width": `calc(100% - ${this.navWidth}px)`};
     }
-
 
     public getCursor(): object {
         return this.isResizing
