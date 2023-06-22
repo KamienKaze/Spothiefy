@@ -5,6 +5,7 @@ import {NavWidthManagerService} from "./services/nav-width-manager/nav-width-man
 const MOUSE_MOVEMENT$: Observable<MouseEvent> = fromEvent<MouseEvent>(document, 'mousemove');
 const NAV_BREAKPOINT: number = NavWidthManagerService.getNavBreakpoint(); //rem
 const NAV_MIN_WIDTH: number = NavWidthManagerService.getNavMinWidth(); //rem
+const NAV_MAX_WIDTH: number = NavWidthManagerService.getNavMaxWidth(); //rem
 
 
 @Component({
@@ -21,7 +22,7 @@ export class AppComponent {
 
     public getNavStyles(): object {
         return this.isNavExpanded
-            ? { 'max-width': `none`,
+            ? { 'max-width': `${NAV_MAX_WIDTH}rem`,
                 'min-width': `${NAV_BREAKPOINT}rem`,
                 "width": `${this.navWidth}px` }
             : { 'max-width': `${NAV_MIN_WIDTH}rem`,
@@ -54,7 +55,7 @@ export class AppComponent {
         });
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         NavWidthManagerService.navWidthSubject.subscribe((navWidth: number): void => {
             this.navWidth = navWidth;
         });

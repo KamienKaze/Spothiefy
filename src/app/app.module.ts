@@ -12,7 +12,7 @@ import { PlayerBarSectionComponent } from './components/player-bar-section/playe
 import { GroupContainerComponent } from './components/reusable/group-container/group-container.component';
 import { NavSectionComponent } from './components/nav-section/nav-section.component';
 import { ArticleSectionComponent } from './components/article-section/article-section.component';
-import { NavCheckboxComponent } from './components/reusable/nav-checkbox/nav-checkbox.component';
+import { NavCheckboxComponent } from './components/reusable/nav-buttons/nav-checkbox/nav-checkbox.component';
 import {LocalStorageManagerService} from "./services/local-storage-manager/local-storage-manager.service";
 
 

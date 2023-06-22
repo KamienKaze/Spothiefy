@@ -1,0 +1,64 @@
+@import "../../../../../assets/color-palette";
+
+@mixin active {
+  .icon {
+    fill: getPrimary(500);
+  }
+
+  .name {
+    color: getPrimary(500);
+  }
+}
+
+:host {
+  width: 100%;
+  height: fit-content;
+
+  container-type: inline-size;
+  display: flex;
+
+
+
+  .checkbox-container {
+    width: fit-content;
+    padding: 0.7rem;
+
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    column-gap: 1rem;
+
+    .icon {
+      width: 24px;
+      height: 24px;
+      fill: getPrimary(400);
+
+    }
+    .name {
+      font-weight: bold;
+      color: getPrimary(400);
+    }
+  }
+
+  .active {
+    @include active;
+  }
+
+  &:hover {
+    .checkbox-container {
+      @include active;
+    }
+  }
+
+  @container (max-width: 10rem) {
+
+    .checkbox-container {
+
+      width: 3rem;
+
+      .name {
+        display: none;
+      }
+    }
+  }
+}

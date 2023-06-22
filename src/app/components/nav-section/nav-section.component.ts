@@ -21,7 +21,7 @@ export class NavSectionComponent {
             : NavWidthManagerService.collapseNav();
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         NavWidthManagerService.isNavExpandedSubject.subscribe((isExpanded: boolean): void => {
             this.isLibraryCheckboxActive = isExpanded;
         });

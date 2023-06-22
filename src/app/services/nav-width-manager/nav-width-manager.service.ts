@@ -3,7 +3,8 @@ import {LocalStorageManagerService} from "../local-storage-manager/local-storage
 import {BehaviorSubject} from "rxjs";
 
 const NAV_BREAKPOINT: number = 17.6; //rem
-const NAV_MIN_WIDTH: number = 3.8; //rem
+const NAV_MIN_WIDTH: number = 4.4; //rem
+const NAV_MAX_WIDTH: number = 52.25; //rem
 
 @Injectable({
     providedIn: 'root'
@@ -41,6 +42,9 @@ export class NavWidthManagerService {
     public static getNavMinWidth(): number {
         return NAV_MIN_WIDTH;
     }
+    public static getNavMaxWidth(): number {
+        return NAV_MAX_WIDTH;
+    }
 
     public static collapseNav(): void {
         this.navWidthSubject.next(this.convertRemToPx(NAV_MIN_WIDTH));
@@ -61,20 +65,35 @@ export class NavWidthManagerService {
     private static shouldNavBeExpanded(newWidth: number): boolean {
         return newWidth > (this.convertRemToPx(NAV_BREAKPOINT) / 2) && !this.getIsNavExpandedFromLocalStorage();
     }
+    private static checkIfCanMove(newWidth: number): boolean {
+        return this.getIsNavExpandedFromLocalStorage()
+            && newWidth > this.convertRemToPx(NAV_BREAKPOINT)
+            && newWidth < this.convertRemToPx(NAV_MAX_WIDTH);
+    }
 
-    public static updateNavWidth(newWidth: number): void {
+    private static changeNavStateManually(newWidth: number): void {
         if(this.shouldNavBeExpanded(newWidth)) {
             this.expandNavManually();
             return;
         }
+
         if(this.shouldNavBeCollapsed(newWidth)) {
             this.collapseNav();
             return;
         }
-
-        this.navWidthSubject.next(newWidth);
-        LocalStorageManagerService.setNumberToLocalStorage('navWidth', newWidth);
     }
 
+    public static updateNavWidth(newWidth: number): void {
 
+        this.changeNavStateManually(newWidth);
+
+        if(this.checkIfCanMove(newWidth)) {
+            LocalStorageManagerService.setNumberToLocalStorage('navWidth', newWidth);
+            this.navWidthSubject.next(newWidth);
+            console.log("navWidth update")
+            return;
+        }
+
+        return;
+    }
 }
