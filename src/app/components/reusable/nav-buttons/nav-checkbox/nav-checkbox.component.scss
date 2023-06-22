@@ -1,23 +1,11 @@
 @import "../../../../../assets/color-palette";
 
-@mixin active {
-  .icon {
-    fill: getPrimary(500);
-  }
-
-  .name {
-    color: getPrimary(500);
-  }
-}
-
 :host {
   width: 100%;
   height: fit-content;
 
   container-type: inline-size;
   display: flex;
-
-
 
   .checkbox-container {
     width: fit-content;
@@ -40,16 +28,6 @@
     }
   }
 
-  .active {
-    @include active;
-  }
-
-  &:hover {
-    .checkbox-container {
-      @include active;
-    }
-  }
-
   @container (max-width: 10rem) {
 
     .checkbox-container {
@@ -59,6 +37,16 @@
       .name {
         display: none;
       }
+    }
+  }
+
+  .active {
+    .icon {
+      fill: getPrimary(500);
+    }
+
+    .name {
+      color: getPrimary(500);
     }
   }
 }
