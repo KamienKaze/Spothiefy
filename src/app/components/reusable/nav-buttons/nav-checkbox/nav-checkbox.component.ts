@@ -1,5 +1,7 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 
+const ICONS_DIRECTORY: string = "./../../../assets/icons/";
+
 @Component({
     selector: 'app-nav-checkbox',
     templateUrl: './nav-checkbox.component.html',
@@ -12,17 +14,23 @@ export class NavCheckboxComponent {
     @Input() private isActive: boolean = false;
     @Output() private isActiveChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-    public path = "./../../../assets/icons/home.svg#true";
+    public isHovered: boolean = false;
 
+    public getIconPath(): string {
+        return this.isActive
+            ? `${ICONS_DIRECTORY}${this.name}.svg#true`
+            : `${ICONS_DIRECTORY}${this.name}.svg#false`;
+    }
 
-    public getIsActiveClass(): object {
-        return { "active": this.isActive };
+    public getActiveClass(): object {
+        return { "active": this.isHovered || this.isActive };
     }
 
     public onClickEvent(): void {
-        this.isActive = !this.isActive;
+        if(!this.isLocked) this.isActive = !this.isActive;
     }
 
-
-
+    public changeHoverProperty(): void {
+        this.isHovered = !this.isHovered;
+    }
 }

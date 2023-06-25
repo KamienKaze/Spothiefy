@@ -1,6 +1,11 @@
-<div class="checkbox-container" [ngClass]="getIsActiveClass()" (click)="onClickEvent()">
+<div class="checkbox-container"
+     [ngClass]="getActiveClass()"
+     (click)="onClickEvent()"
+     (mouseenter)="changeHoverProperty()"
+     (mouseleave)="changeHoverProperty()">
+
     <svg class="icon">
-        <use [attr.xlink:href]="path"></use>
+        <use [attr.xlink:href]="getIconPath()"></use>
     </svg>
     <div class="name">
         {{ name | titlecase }}
