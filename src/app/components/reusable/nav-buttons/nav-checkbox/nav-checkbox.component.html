@@ -1,8 +1,8 @@
-<div class="checkbox-container">
+<div class="checkbox-container" [ngClass]="getIsActiveClass()" (click)="onClickEvent()">
     <svg class="icon">
-        <use href="./../../../assets/icons/home.svg#false"></use>
+        <use [attr.xlink:href]="path"></use>
     </svg>
     <div class="name">
-        Home
+        {{ name | titlecase }}
     </div>
 </div>

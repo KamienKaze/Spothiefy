@@ -12,14 +12,17 @@ export class NavCheckboxComponent {
     @Input() private isActive: boolean = false;
     @Output() private isActiveChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-    public changeActiveState(): void {
-        if(!this.isLocked) this.isActive = !this.isActive;
-        this.isActiveChange.emit(this.isActive);
+    public path = "./../../../assets/icons/home.svg#true";
+
+
+    public getIsActiveClass(): object {
+        return { "active": this.isActive };
     }
 
-    public getCLass(): string {
-        return this.isActive
-            ? 'active'
-            : '';
+    public onClickEvent(): void {
+        this.isActive = !this.isActive;
     }
+
+
+
 }
