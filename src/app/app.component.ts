@@ -19,12 +19,22 @@ export class AppComponent {
     private navWidth: number = 0;
     private isNavExpanded: boolean = false;
     private isResizing: boolean = false;
+    private isResizerHovered: boolean = false;
+
+    public getResizerActiveClass(): object {
+        return { "resizer-active" : this.isResizing || this.isResizerHovered };
+    }
+
+    public changeResizerHoverProperty(): void {
+        this.isResizerHovered = !this.isResizerHovered;
+    }
 
     public getNavStyles(): object {
         return this.isNavExpanded
             ? { 'max-width': `${NAV_MAX_WIDTH}rem`,
                 'min-width': `${NAV_BREAKPOINT}rem`,
                 "width": `${this.navWidth}px` }
+
             : { 'max-width': `${NAV_MIN_WIDTH}rem`,
                 'min-width': `${NAV_MIN_WIDTH}rem`,
                 "width": `${this.navWidth}px`};

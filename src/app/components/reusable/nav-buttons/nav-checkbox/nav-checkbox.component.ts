@@ -12,7 +12,6 @@ export class NavCheckboxComponent {
     @Input('name') public name: string = '';
     @Input('isLocked') private isLocked: boolean = false;
     @Input() private isActive: boolean = false;
-    @Output() private isActiveChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
     public isHovered: boolean = false;
 

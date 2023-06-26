@@ -33,7 +33,7 @@
       &-range {
         position: relative;
 
-        $resize-range: 0.4rem;
+        $resize-range: 0.6rem;
 
         width: $resize-range;
         height: 100%;
@@ -41,18 +41,18 @@
 
         display: flex;
         justify-content: center;
+      }
+    }
 
-        &:hover {
+    .resizer-active {
 
-          cursor: col-resize;
+      cursor: col-resize;
 
-          .handle {
-            width: 1px;
-            height: 100%;
+      .handle {
+        width: 1px;
+        height: 100%;
 
-            background: getPrimary(300);
-          }
-        }
+        background: getPrimary(300);
       }
     }
 
