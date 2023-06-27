@@ -1,10 +1,22 @@
-<div class="main-content" [ngStyle]="getCursor()" id="jd">
-    <app-nav-section class="nav-section" [ngStyle]="getNavStyles()"/>
-    <div class="resizer" [ngClass]="getResizerActiveClass()" (mouseenter)="changeResizerHoverProperty()" (mouseleave)="changeResizerHoverProperty()">
-        <div class="resizer-range" (mousedown)="startResizing()" (window:mouseup)="endResizing()">
+<div class="main-content"
+     [ngStyle]="getCursor()" id="jd">
+
+    <app-nav-section class="nav-section"
+                     [ngStyle]="getNavStyles()"/>
+
+    <div class="resizer"
+         [ngClass]="getResizerActiveClass()"
+         (mouseenter)="changeResizerHoverProperty()"
+         (mouseleave)="changeResizerHoverProperty()">
+
+        <div class="resizer-range"
+             (mousedown)="startResizing()"
+             (window:mouseup)="endResizing()">
+
             <div class="handle"></div>
         </div>
     </div>
-    <app-article-section class="article-section" [ngStyle]="getArticleWidth()"/>
+    <app-article-section class="article-section"
+                         [ngStyle]="getArticleWidth()"/>
 </div>
 <app-player-bar-section class="player-bar"/>
