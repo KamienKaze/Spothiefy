@@ -21,7 +21,6 @@ export class AppComponent {
     private isResizing: boolean = false;
     private isResizerHovered: boolean = false;
 
-
     public getResizerActiveClass(): object {
         return { "resizer-active" : this.isResizing || this.isResizerHovered };
     }
