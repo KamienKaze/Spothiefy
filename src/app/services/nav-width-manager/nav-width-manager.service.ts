@@ -10,7 +10,7 @@ const NAV_MAX_WIDTH: number = 52.25; //rem
     providedIn: 'root'
 })
 
-
+//to delete
 export class NavWidthManagerService {
 
     public static navWidthSubject: BehaviorSubject<number> = new BehaviorSubject<number>
