@@ -90,8 +90,11 @@ export class NavWidthManagerService {
         if(this.checkIfCanMove(newWidth)) {
             LocalStorageManagerService.setNumberToLocalStorage('navWidth', newWidth);
             this.navWidthSubject.next(newWidth);
-            console.log("navWidth update")
-            return;
+        }
+
+        if(!this.checkIfCanMove(newWidth) && newWidth > this.convertRemToPx(NAV_MAX_WIDTH)) {
+            LocalStorageManagerService.setNumberToLocalStorage('navWidth', this.convertRemToPx(NAV_MAX_WIDTH));
+            this.navWidthSubject.next(this.convertRemToPx(NAV_MAX_WIDTH));
         }
 
         return;

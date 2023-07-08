@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 const ICONS_DIRECTORY: string = "./../../../assets/icons/";
 
@@ -29,7 +29,7 @@ export class NavCheckboxComponent {
         if(!this.isLocked) this.isActive = !this.isActive;
     }
 
-    public changeHoverProperty(): void {
-        this.isHovered = !this.isHovered;
+    public setHoverProperty(isHovered: boolean): void {
+        this.isHovered = isHovered;
     }
 }

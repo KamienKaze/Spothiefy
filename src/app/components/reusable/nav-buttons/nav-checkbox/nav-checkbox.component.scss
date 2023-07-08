@@ -20,11 +20,13 @@
       width: 24px;
       height: 24px;
       fill: getPrimary(400);
+      transition: 0.3s;
 
     }
     .name {
       font-weight: bold;
       color: getPrimary(400);
+      transition: 0.3s;
     }
   }
 
@@ -43,10 +45,12 @@
   .active {
     .icon {
       fill: getPrimary(500);
+      transition: 0.3s;
     }
 
     .name {
       color: getPrimary(500);
+      transition: 0.3s;
     }
   }
 }

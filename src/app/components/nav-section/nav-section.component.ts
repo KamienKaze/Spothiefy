@@ -10,7 +10,7 @@ import {Subscription} from "rxjs";
 export class NavSectionComponent {
 
     public isHomeCheckboxActive: boolean = true;
-    public isHomeCheckboxLocked: boolean = true;
+    public isHomeCheckboxLocked: boolean = false;
 
     public isLibraryCheckboxActive: boolean = false;
     public isLibraryCheckboxLocked: boolean = false;

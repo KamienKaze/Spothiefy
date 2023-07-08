@@ -1,8 +1,8 @@
 <div class="checkbox-container"
      [ngClass]="getActiveClass()"
      (click)="onClickEvent()"
-     (mouseenter)="changeHoverProperty()"
-     (mouseleave)="changeHoverProperty()">
+     (mouseenter)="setHoverProperty(true)"
+     (mouseleave)="setHoverProperty(false)">
 
     <svg class="icon">
         <use [attr.xlink:href]="getIconPath()"></use>
