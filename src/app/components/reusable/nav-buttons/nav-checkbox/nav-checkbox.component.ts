@@ -25,10 +25,6 @@ export class NavCheckboxComponent {
         return { "active": this.isHovered || this.isActive };
     }
 
-    public onClickEvent(): void {
-        if(!this.isLocked) this.isActive = !this.isActive;
-    }
-
     public setHoverProperty(isHovered: boolean): void {
         this.isHovered = isHovered;
     }

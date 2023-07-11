@@ -66,10 +66,10 @@ export class AppComponent {
     }
 
     ngOnInit(): void {
-        NavWidthManagerService.navWidthSubject.subscribe((navWidth: number): void => {
+        NavWidthManagerService.navWidthSubject$.subscribe((navWidth: number): void => {
             this.navWidth = navWidth;
         });
-        NavWidthManagerService.isNavExpandedSubject.subscribe((isNavExpanded: boolean): void => {
+        NavWidthManagerService.isNavExpandedSubject$.subscribe((isNavExpanded: boolean): void => {
             this.isNavExpanded = isNavExpanded;
         });
     }

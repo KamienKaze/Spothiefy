@@ -12,9 +12,9 @@ const NAV_MAX_WIDTH: number = 52.25; //rem
 
 export class NavWidthManagerService {
 
-    public static navWidthSubject: BehaviorSubject<number> = new BehaviorSubject<number>
+    public static navWidthSubject$: BehaviorSubject<number> = new BehaviorSubject<number>
     (NavWidthManagerService.getNavWidthFromLocalStorage());
-    public static isNavExpandedSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>
+    public static isNavExpandedSubject$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>
     (NavWidthManagerService.getIsNavExpandedFromLocalStorage());
 
     private static fontSize: number = parseFloat(getComputedStyle(document.documentElement).fontSize);
@@ -32,7 +32,7 @@ export class NavWidthManagerService {
         getBoolFromLocalStorage('isNavExpanded', true);
     }
     private static updateIsNavExpanded(isNavExpanded: boolean): void {
-        this.isNavExpandedSubject.next(isNavExpanded);
+        this.isNavExpandedSubject$.next(isNavExpanded);
         LocalStorageManagerService.setBoolToLocalStorage('isNavExpanded', isNavExpanded.toString());
     }
 
@@ -47,15 +47,15 @@ export class NavWidthManagerService {
     }
 
     public static collapseNav(): void {
-        this.navWidthSubject.next(this.convertRemToPx(NAV_MIN_WIDTH));
+        this.navWidthSubject$.next(this.convertRemToPx(NAV_MIN_WIDTH));
         this.updateIsNavExpanded(false);
     }
     public static expandNavManually(): void {
-        this.navWidthSubject.next(this.convertRemToPx(NAV_BREAKPOINT));
+        this.navWidthSubject$.next(this.convertRemToPx(NAV_BREAKPOINT));
         this.updateIsNavExpanded(true);
     }
     public static expandNavButton(): void {
-        this.navWidthSubject.next(this.getNavWidthFromLocalStorage());
+        this.navWidthSubject$.next(this.getNavWidthFromLocalStorage());
         this.updateIsNavExpanded(true);
     }
 
@@ -89,12 +89,12 @@ export class NavWidthManagerService {
 
         if(this.checkIfCanMove(newWidth)) {
             LocalStorageManagerService.setNumberToLocalStorage('navWidth', newWidth);
-            this.navWidthSubject.next(newWidth);
+            this.navWidthSubject$.next(newWidth);
         }
 
         if(!this.checkIfCanMove(newWidth) && newWidth > this.convertRemToPx(NAV_MAX_WIDTH)) {
             LocalStorageManagerService.setNumberToLocalStorage('navWidth', this.convertRemToPx(NAV_MAX_WIDTH));
-            this.navWidthSubject.next(this.convertRemToPx(NAV_MAX_WIDTH));
+            this.navWidthSubject$.next(this.convertRemToPx(NAV_MAX_WIDTH));
         }
 
         return;

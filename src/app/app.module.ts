@@ -14,6 +14,7 @@ import { NavSectionComponent } from './components/nav-section/nav-section.compon
 import { ArticleSectionComponent } from './components/article-section/article-section.component';
 import { NavCheckboxComponent } from './components/reusable/nav-buttons/nav-checkbox/nav-checkbox.component';
 import {LocalStorageManagerService} from "./services/local-storage-manager/local-storage-manager.service";
+import { HomePageComponent } from './components/home-page/home-page.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import {LocalStorageManagerService} from "./services/local-storage-manager/local
     NavSectionComponent,
     ArticleSectionComponent,
     NavCheckboxComponent,
+    HomePageComponent,
   ],
     imports: [
         BrowserModule,

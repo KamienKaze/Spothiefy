@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {NavWidthManagerService} from "../../services/nav-width-manager/nav-width-manager.service";
-import {Subscription} from "rxjs";
+import {NavigationEnd, Router} from "@angular/router";
 
 @Component({
     selector: 'app-nav-section',
@@ -9,21 +9,44 @@ import {Subscription} from "rxjs";
 })
 export class NavSectionComponent {
 
-    public isHomeCheckboxActive: boolean = true;
+    constructor(private router: Router) {}
+
+    private currentUrl: string = '';
+
+    public isHomeCheckboxActive: boolean = false;
     public isHomeCheckboxLocked: boolean = false;
 
     public isLibraryCheckboxActive: boolean = false;
     public isLibraryCheckboxLocked: boolean = false;
 
+    public updateHomeState(): void {
+        if(this.currentUrl == '/home') {
+            this.isHomeCheckboxActive = true;
+        } else {
+            this.isHomeCheckboxActive = false;
+        }
+    }
+
     public libraryOnClick(): void {
+        if(this.isLibraryCheckboxLocked) return;
+        this.isLibraryCheckboxActive = !this.isLibraryCheckboxActive;
+
         this.isLibraryCheckboxActive
             ? NavWidthManagerService.expandNavButton()
             : NavWidthManagerService.collapseNav();
     }
 
     ngOnInit(): void {
-        NavWidthManagerService.isNavExpandedSubject.subscribe((isExpanded: boolean): void => {
+        NavWidthManagerService.isNavExpandedSubject$.subscribe((isExpanded: boolean): void => {
             this.isLibraryCheckboxActive = isExpanded;
+        });
+
+        this.router.events.subscribe((event) => {
+            if(event instanceof NavigationEnd) {
+                this.currentUrl = event.url;
+            }
+
+            this.updateHomeState();
         });
     }
 }

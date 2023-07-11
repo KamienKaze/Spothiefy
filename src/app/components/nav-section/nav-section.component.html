@@ -1,8 +1,13 @@
 <app-group-container class="buttons-group">
     <app-nav-checkbox name="home"
+                      routerLink="home"
                       [isActive]="isHomeCheckboxActive"
                       [isLocked]="isHomeCheckboxLocked"/>
 </app-group-container>
 <app-group-container class="library-group">
-
+    <app-nav-checkbox name="library"
+                      [isActive]="isLibraryCheckboxActive"
+                      [isLocked]="isLibraryCheckboxLocked"
+                      (click)="libraryOnClick()"/>
+    <h2 routerLink="link1">Link1</h2>
 </app-group-container>
