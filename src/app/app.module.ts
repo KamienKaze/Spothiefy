@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CurrentSongComponent } from './components/legacy/current-song/current-song.component';
 import { TrackControlsComponent } from './components/legacy/track-controls/track-controls.component';
 import { VolumeControlComponent } from './components/legacy/volume-control/volume-control.component';
 import { FormsModule } from "@angular/forms";
@@ -15,21 +14,23 @@ import { ArticleSectionComponent } from './components/article-section/article-se
 import { NavCheckboxComponent } from './components/reusable/nav-buttons/nav-checkbox/nav-checkbox.component';
 import {LocalStorageManagerService} from "./services/local-storage-manager/local-storage-manager.service";
 import { HomePageComponent } from './components/home-page/home-page.component';
+import {CurrentSongComponent} from "./components/player-bar-section/current-song/current-song.component";
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CurrentSongComponent,
-    TrackControlsComponent,
-    VolumeControlComponent,
-    PlayerBarSectionComponent,
-    GroupContainerComponent,
-    NavSectionComponent,
-    ArticleSectionComponent,
-    NavCheckboxComponent,
-    HomePageComponent,
-  ],
+    declarations: [
+        AppComponent,
+        CurrentSongComponent,
+        TrackControlsComponent,
+        VolumeControlComponent,
+        PlayerBarSectionComponent,
+        GroupContainerComponent,
+        NavSectionComponent,
+        ArticleSectionComponent,
+        NavCheckboxComponent,
+        HomePageComponent,
+        CurrentSongComponent,
+    ],
     imports: [
         BrowserModule,
         AppRoutingModule,

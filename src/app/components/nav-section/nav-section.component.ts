@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {NavWidthManagerService} from "../../services/nav-width-manager/nav-width-manager.service";
-import {NavigationEnd, Router} from "@angular/router";
+import {NavigationEnd, NavigationSkipped, NavigationStart, ResolveStart, Router} from "@angular/router";
 
 @Component({
     selector: 'app-nav-section',
@@ -20,11 +20,7 @@ export class NavSectionComponent {
     public isLibraryCheckboxLocked: boolean = false;
 
     public updateHomeState(): void {
-        if(this.currentUrl == '/home') {
-            this.isHomeCheckboxActive = true;
-        } else {
-            this.isHomeCheckboxActive = false;
-        }
+        this.isHomeCheckboxActive = this.currentUrl == '/home' || this.currentUrl == '/';
     }
 
     public libraryOnClick(): void {
@@ -42,7 +38,7 @@ export class NavSectionComponent {
         });
 
         this.router.events.subscribe((event) => {
-            if(event instanceof NavigationEnd) {
+            if(event instanceof NavigationStart) {
                 this.currentUrl = event.url;
             }
 

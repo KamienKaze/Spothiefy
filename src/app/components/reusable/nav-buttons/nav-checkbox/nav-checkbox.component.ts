@@ -22,7 +22,7 @@ export class NavCheckboxComponent {
     }
 
     public getActiveClass(): object {
-        return { "active": this.isHovered || this.isActive };
+        return { "active": this.isHovered };
     }
 
     public setHoverProperty(isHovered: boolean): void {

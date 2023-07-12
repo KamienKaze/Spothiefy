@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {Observable, fromEvent, takeWhile, Subscription} from "rxjs";
 import {NavWidthManagerService} from "./services/nav-width-manager/nav-width-manager.service";
+import {LocalStorageManagerService} from "./services/local-storage-manager/local-storage-manager.service";
 
 const MOUSE_MOVEMENT$: Observable<MouseEvent> = fromEvent<MouseEvent>(document, 'mousemove');
 const NAV_BREAKPOINT: number = NavWidthManagerService.getNavBreakpoint(); //rem

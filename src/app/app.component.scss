@@ -62,7 +62,7 @@
   }
 
   .player-bar {
-    width: 100%;
+    width: calc(100% - (2 * 0.5rem));
     height: 6.1rem;
     background: getPrimary(100);
   }

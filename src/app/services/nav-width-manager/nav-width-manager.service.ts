@@ -28,8 +28,12 @@ export class NavWidthManagerService {
         getNumberFromLocalStorage('navWidth', NavWidthManagerService.convertRemToPx(NAV_BREAKPOINT));
     }
     private static getIsNavExpandedFromLocalStorage(): boolean {
-        return LocalStorageManagerService.
-        getBoolFromLocalStorage('isNavExpanded', true);
+        if(!LocalStorageManagerService.getBoolFromLocalStorage('isNavExpanded', true)) {
+            this.navWidthSubject$.next(this.convertRemToPx(NAV_MIN_WIDTH));
+        }
+
+        return LocalStorageManagerService.getBoolFromLocalStorage('isNavExpanded', true);
+
     }
     private static updateIsNavExpanded(isNavExpanded: boolean): void {
         this.isNavExpandedSubject$.next(isNavExpanded);
@@ -52,10 +56,12 @@ export class NavWidthManagerService {
     }
     public static expandNavManually(): void {
         this.navWidthSubject$.next(this.convertRemToPx(NAV_BREAKPOINT));
+        LocalStorageManagerService.setNumberToLocalStorage('navWidth', this.convertRemToPx(NAV_BREAKPOINT));
         this.updateIsNavExpanded(true);
     }
     public static expandNavButton(): void {
         this.navWidthSubject$.next(this.getNavWidthFromLocalStorage());
+        LocalStorageManagerService.setNumberToLocalStorage('navWidth', this.getNavWidthFromLocalStorage());
         this.updateIsNavExpanded(true);
     }
 

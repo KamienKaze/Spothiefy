@@ -6,7 +6,6 @@ import {VolumeControlComponent} from "./components/legacy/volume-control/volume-
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomePageComponent },
-  { path: 'link1', component: VolumeControlComponent }
 ];
 
 @NgModule({

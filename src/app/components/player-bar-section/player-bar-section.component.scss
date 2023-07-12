@@ -1,5 +1,9 @@
-svg {
-  height: 24px;
-  width: 24px;
-  fill: red;
+:host {
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+
+  padding-left: 0.5rem;
+
 }
