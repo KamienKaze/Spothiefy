@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TrackControlsComponent } from './components/legacy/track-controls/track-controls.component';
 import { VolumeControlComponent } from './components/legacy/volume-control/volume-control.component';
 import { FormsModule } from "@angular/forms";
 import {ColorProviderService} from "./colors-provider/color-provider.service";
@@ -15,6 +14,7 @@ import { NavCheckboxComponent } from './components/reusable/nav-buttons/nav-chec
 import {LocalStorageManagerService} from "./services/local-storage-manager/local-storage-manager.service";
 import { HomePageComponent } from './components/home-page/home-page.component';
 import {CurrentSongComponent} from "./components/player-bar-section/current-song/current-song.component";
+import {TrackControlsComponent} from "./components/player-bar-section/track-controls/track-controls.component";
 
 
 @NgModule({
@@ -30,6 +30,8 @@ import {CurrentSongComponent} from "./components/player-bar-section/current-song
         NavCheckboxComponent,
         HomePageComponent,
         CurrentSongComponent,
+        TrackControlsComponent,
+        TrackControlsComponent,
     ],
     imports: [
         BrowserModule,

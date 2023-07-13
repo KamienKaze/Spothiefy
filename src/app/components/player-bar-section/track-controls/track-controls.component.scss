@@ -1,0 +1,83 @@
+@import "../../../../assets/color-palette";
+@import "./../slider";
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+
+  row-gap: 0.5rem;
+
+  .buttons-container {
+
+    display: flex;
+    flex-direction: row;
+
+    column-gap: 1.1rem;
+
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 2rem;
+      height: 2rem;
+
+      .icon {
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    .play-btn {
+      border-radius: 100%;
+      border: none;
+
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+
+    .prev-btn, .next-btn {
+      background: none;
+      border: none;
+
+      .icon {
+        fill: getPrimary(400);
+      }
+
+      &:hover {
+        .icon {
+          fill: getPrimary(500);
+        }
+      }
+
+      &:active {
+        .icon {
+          fill: getPrimary(400);
+        }
+      }
+    }
+  }
+
+  .time-control-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    input {
+      width: 80%;
+    }
+
+    label {
+      color: getPrimary(400);
+      font-size: 0.7rem;
+      margin-left: 0.8rem;
+      margin-right: 0.8rem;
+      user-select: none;
+    }
+  }
+}
