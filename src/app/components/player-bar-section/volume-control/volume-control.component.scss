@@ -1,0 +1,23 @@
+@import "../../../../assets/color-palette";
+@import "./../slider";
+
+.volume-control-component {
+  width: 9rem;
+  height: 1.8rem;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  column-gap: 0.7rem;
+
+  .icon {
+    width: 16px;
+    height: 16px;
+    fill: getPrimary(400);
+  }
+
+  input {
+    width: 5rem;
+  }
+}

@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { VolumeControlComponent } from './components/legacy/volume-control/volume-control.component';
 import { FormsModule } from "@angular/forms";
 import {ColorProviderService} from "./colors-provider/color-provider.service";
 import { PlayerBarSectionComponent } from './components/player-bar-section/player-bar-section.component';
@@ -15,6 +14,7 @@ import {LocalStorageManagerService} from "./services/local-storage-manager/local
 import { HomePageComponent } from './components/home-page/home-page.component';
 import {CurrentSongComponent} from "./components/player-bar-section/current-song/current-song.component";
 import {TrackControlsComponent} from "./components/player-bar-section/track-controls/track-controls.component";
+import {VolumeControlComponent} from "./components/player-bar-section/volume-control/volume-control.component";
 
 
 @NgModule({
@@ -32,6 +32,7 @@ import {TrackControlsComponent} from "./components/player-bar-section/track-cont
         CurrentSongComponent,
         TrackControlsComponent,
         TrackControlsComponent,
+        VolumeControlComponent,
     ],
     imports: [
         BrowserModule,

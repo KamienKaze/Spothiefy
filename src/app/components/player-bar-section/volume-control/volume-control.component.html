@@ -1,0 +1,13 @@
+<div class="volume-control-component" (mouseover)="isHovered = true" (mouseout)="isHovered = false">
+    <svg class="icon" (click)="muteButtonAction()">
+        <use [attr.xlink:href]="getVolumeIcon()"></use>
+    </svg>
+    <input
+            type="range"
+            min="0"
+            max="100"
+            [(ngModel)]="inputValue"
+            (input)="onInputUpdate()"
+            [ngStyle]="setOnHoverStyles()"
+    >
+</div>
