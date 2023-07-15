@@ -15,6 +15,10 @@
     width: 16px;
     height: 16px;
     fill: getPrimary(400);
+
+    &:hover {
+      fill: getPrimary(500)
+    }
   }
 
   input {
