@@ -26,14 +26,18 @@ export class MusicPlayerService {
         this.songThumbnail$.next(thumbnailSrc);
         this.songName$.next(title);
         this.artist$.next(artist);
+        this.playAudio();
+        MusicPlayerService.isPlaying$.next(true);
     }
 
     public static pauseAudio(): void {
         MusicPlayerService.audio.pause();
+        MusicPlayerService.isPlaying$.next(false);
     }
 
     public static playAudio(): void {
         MusicPlayerService.audio.play();
+        MusicPlayerService.isPlaying$.next(true);
     }
 
     public static setAudioVolume(newVolume: number): void {
@@ -58,9 +62,9 @@ export class MusicPlayerService {
             MusicPlayerService.audioCurrentTime$.next(0);
         });
 
-        MusicPlayerService.playNewSong(`./../../../assets/tracks/nfhope.mp3`,
-                                    `.\\..\\..\\..\\assets\\thumbnails\\nfhope.jpg`,
-                                          `NF`,
-                                           `HOPE`);
+        MusicPlayerService.loadNewAudio(`./../../../assets/tracks/nfhope.mp3`);
+        MusicPlayerService.songThumbnail$.next(`./../../../assets/thumbnails/nfhope.jpg`);
+        MusicPlayerService.songName$.next(`HOPE`);
+        MusicPlayerService.artist$.next(`NF`);
     }
 }

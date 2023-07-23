@@ -3,8 +3,10 @@
     <div class="track-tiles">
         <app-main-track-tile
                 *ngFor="let track of tracks"
-                artist="{{track.artist}} ● {{track.title}}"
-                image-url="./../../assets/thumbnails/{{track.thumbnailFilename}}">
+                name="{{track.title}}"
+                artist="{{track.artist}}"
+                image-url="./../../assets/thumbnails/{{track.thumbnailFilename}}"
+                track-url="./../../assets/tracks/{{track.trackSrc}}">
         </app-main-track-tile>
     </div>
 </app-group-container>

@@ -18,25 +18,25 @@
       "artist": "NF",
       "title": "HOPE",
       "thumbnailFilename": "nfhope.jpg",
-      "track-src": "nfhope.mp3"
+      "trackSrc": "nfhope.mp3"
     },
     {
       "artist": "NF",
       "title": "MOTTO",
       "thumbnailFilename": "nfmotto.jpg",
-      "track-src": "nfmotto.mp3"
+      "trackSrc": "nfmotto.mp3"
     },
     {
       "artist": "piri & tommy",
       "title": "on & on",
       "thumbnailFilename": "piritommyonon.jpg",
-      "track-src": "piritommyonon.mp3"
+      "trackSrc": "piritommyonon.mp3"
     },
     {
       "artist": "Rag'n'Bone Man",
       "title": "Human",
       "thumbnailFilename": "ragnbonemanhuman.jpg",
-      "track-src": "ragnbonemanhuman.mp3"
+      "trackSrc": "ragnbonemanhuman.mp3"
     }
   ]
 }

@@ -1,27 +1,38 @@
 @import "../../../../assets/color-palette";
 
 :host {
-  background-color: #393936;
-  color: white;
-  height: 5rem;
-  min-width: 15rem;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
 
-  img {
-    width: 5rem;
+  .button {
+    background-color: #393936;
+    color: white;
     height: 5rem;
-    border-radius: 5px 0 0 5px;
+    min-width: 15rem;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    img {
+      width: 5rem;
+      height: 5rem;
+      border-radius: 5px 0 0 5px;
+    }
+
+    .artist {
+      padding: 1rem;
+      font-weight: bold;
+    }
+
+    .gif {
+      width: 1rem;
+      height: 1rem;
+      padding: 1rem;
+      margin-left: auto;
+    }
   }
 
-  .artist {
-    padding-left: 1rem;
-    font-weight: bold;
+  .button:hover {
+    background-color: getPrimary(300);
   }
 }
 
-:host:hover {
-  background-color: getPrimary(300);
-}

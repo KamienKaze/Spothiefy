@@ -1,2 +1,10 @@
-<img alt="artist_img" src="{{imageSrc}}"/>
-<div class="artist">{{artist}}</div>
+<div class="button" (click)="playNewSong()">
+    <img alt="artist_img" src="{{imageSrc}}"/>
+    <div class="artist"
+         [ngStyle]="isPlaying() ?
+         {'color': '#1db954'} :
+         {'color': 'white'}">
+        {{artist}} ● {{name}}
+    </div>
+    <img class="gif" *ngIf="isPlaying() && isCurrentlyPlaying" src="assets/gifs/playing-icon.gif" alt="playing">
+</div>
