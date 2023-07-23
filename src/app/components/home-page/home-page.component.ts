@@ -8,12 +8,12 @@ import {UrlManagerService} from "../../services/urlManager/url-manager.service";
 })
 export class HomePageComponent {
 
-    artists: any = [];
+    tracks: any = [];
 
     constructor(urlManager: UrlManagerService) {
-        urlManager.artists$.subscribe(res => {
-           this.artists = res;
-           console.log(this.artists);
+        urlManager.tracks$.subscribe(res => {
+           this.tracks = res;
+           console.log(this.tracks);
         });
     }
 }

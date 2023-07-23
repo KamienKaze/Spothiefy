@@ -1,6 +1,10 @@
 <app-group-container class="home-group">
     <div class="greeting">Good evening</div>
     <div class="track-tiles">
-        <app-main-track-tile *ngFor="let artist of artists" artist="{{artist.name}}" image-url="./../../assets/artist-profile-pictures/{{artist.pictureFilename}}"></app-main-track-tile>
+        <app-main-track-tile
+                *ngFor="let track of tracks"
+                artist="{{track.artist}} ● {{track.title}}"
+                image-url="./../../assets/thumbnails/{{track.thumbnailFilename}}">
+        </app-main-track-tile>
     </div>
 </app-group-container>

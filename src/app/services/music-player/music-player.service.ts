@@ -58,9 +58,9 @@ export class MusicPlayerService {
             MusicPlayerService.audioCurrentTime$.next(0);
         });
 
-        MusicPlayerService.playNewSong(`./../../../assets/tracks/Rag'n'Bone_Man_-_Human.mp3`,
-                                    `.\\..\\..\\..\\assets\\thumbnails\\Rag'n'Bone_Man_-_Human.jpg`,
-                                          `Rag'n'Bone Man`,
-                                           `Human`);
+        MusicPlayerService.playNewSong(`./../../../assets/tracks/nfhope.mp3`,
+                                    `.\\..\\..\\..\\assets\\thumbnails\\nfhope.jpg`,
+                                          `NF`,
+                                           `HOPE`);
     }
 }
