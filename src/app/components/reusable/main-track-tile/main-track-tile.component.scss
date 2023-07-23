@@ -1,0 +1,23 @@
+@import "../../../../assets/color-palette";
+
+:host {
+  background-color: #393936;
+  color: white;
+  height: 5rem;
+  min-width: 15rem;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  img {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 5px 0 0 5px;
+  }
+
+  .artist {
+    padding-left: 1rem;
+    font-weight: bold;
+  }
+}

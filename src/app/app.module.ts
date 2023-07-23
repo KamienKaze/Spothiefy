@@ -15,6 +15,7 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import {CurrentSongComponent} from "./components/player-bar-section/current-song/current-song.component";
 import {TrackControlsComponent} from "./components/player-bar-section/track-controls/track-controls.component";
 import {VolumeControlComponent} from "./components/player-bar-section/volume-control/volume-control.component";
+import { MainTrackTileComponent } from './components/reusable/main-track-tile/main-track-tile.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import {VolumeControlComponent} from "./components/player-bar-section/volume-con
         TrackControlsComponent,
         TrackControlsComponent,
         VolumeControlComponent,
+        MainTrackTileComponent,
     ],
     imports: [
         BrowserModule,

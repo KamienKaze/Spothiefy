@@ -1,30 +1,42 @@
 {
-  "track": {
-    "artist": "NF",
-    "title": "HOPE",
-    "thumbnail_url": "./tracks/NF_-_HOPE.mp3",
-    "music_url": "./tracks/NF_-_HOPE.mp3"
-  },
-  "track": {
-    "artist": "NF",
-    "title": "MOTTO",
-    "thumbnail_url": "./tracks/NF_-_MOTTO.mp3",
-    "music_url": "./tracks/NF_-_MOTTO.mp3"
-  },
-  "track": {
-    "artist": "piri & tommy",
-    "title": "on & on",
-    "thumbnail_url": "./tracks/piri_&_tommy_-_on_&_on.mp3",
-    "music_url": "./tracks/piri_&_tommy_-_on_&_on.mp3"
-  },
-  "track": {
-    "artist": "Rag'n'Bone Man",
-    "title": "Human",
-    "thumbnail_url": "./thumbnails/Rag'n'Bone_Man_-_Human.mp3",
-    "music_url": "./tracks/Rag'n'Bone_Man_-_Human.mp3"
-  },
-
+  "artists": [
+    {
+      "name": "NF",
+      "picture-filename": "nf.jpg"
+    },
+    {
+      "name": "piri & tommy",
+      "picture-filename": "piritommy.jpg"
+    },
+    {
+      "name": "Rag'n'Bone Man",
+      "picture-filename": "ragnboneman.jpg"
+    }
+  ],
   "tracks": [
-
+    {
+      "artist": "NF",
+      "title": "HOPE",
+      "thumbnail-filename": "nfhope.jpg",
+      "track-src": "nfhope.mp3"
+    },
+    {
+      "artist": "NF",
+      "title": "MOTTO",
+      "thumbnail-filename": "nfmotto.jpg",
+      "track-src": "nfmotto.mp3"
+    },
+    {
+      "artist": "piri & tommy",
+      "title": "on & on",
+      "thumbnail-filename": "piritommyonon.jpg",
+      "track-src": "piritommyonon.mp3"
+    },
+    {
+      "artist": "Rag'n'Bone man",
+      "title": "Human",
+      "thumbnail-filename": "ragnbonemanhuman.jpg",
+      "track-src": "ragnbonemanhuman.mp3"
+    }
   ]
 }

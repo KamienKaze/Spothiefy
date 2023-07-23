@@ -4,7 +4,7 @@ import {BehaviorSubject} from "rxjs";
 
 const NAV_BREAKPOINT: number = 17.6; //rem
 const NAV_MIN_WIDTH: number = 4.4; //rem
-const NAV_MAX_WIDTH: number = 52.25; //rem
+const NAV_MAX_WIDTH: number = 39.5; //rem
 
 @Injectable({
     providedIn: 'root'

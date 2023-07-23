@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {ColorProviderService} from "../../../colors-provider/color-provider.service";
+import {MusicPlayerService} from "../../../services/music-player/music-player.service";
 
 const MAX_INPUT_VALUE = 100;
 const MIN_INPUT_VALUE = 0;
@@ -19,6 +20,10 @@ export class VolumeControlComponent {
   public inputValue: number = this.getFromLocalStorage('inputValue', MAX_INPUT_VALUE);
   private previousValueState: number = this.getFromLocalStorage('inputValue', this.inputValue);
 
+  constructor() {
+    MusicPlayerService.setAudioVolume(this.inputValue / 100);
+  }
+
   private getFromLocalStorage(name: string, def: number): number {
     return Number.parseInt(localStorage.getItem('inputValue') ?? `${def}`);
   }
@@ -32,6 +37,7 @@ export class VolumeControlComponent {
     localStorage.setItem('previousValueState', `${this.previousValueState}`);
     localStorage.setItem('inputValue', `${this.inputValue}`);
     this.previousValueState = this.inputValue;
+    MusicPlayerService.setAudioVolume(this.inputValue / 100);
   }
 
   public isMuted(): boolean {
@@ -82,6 +88,7 @@ export class VolumeControlComponent {
     }
     localStorage.setItem('previousValueState', `${this.previousValueState}`);
     localStorage.setItem('inputValue', `${this.inputValue}`);
+    MusicPlayerService.setAudioVolume(this.inputValue / 100);
   }
 
   private getIconType(): number {

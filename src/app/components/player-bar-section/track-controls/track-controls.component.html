@@ -27,6 +27,7 @@
             [(ngModel)] = "songProgress"
             (mouseover)="isHovered = true"
             (mouseout)="isHovered = false"
+            (input)="updateSongProgress()"
             [ngStyle]="setOnHoverStyles()">
     <label>
         {{ getSongDuration() }}
