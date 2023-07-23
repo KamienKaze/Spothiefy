@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from "@angular/forms";
-import {ColorProviderService} from "./colors-provider/color-provider.service";
 import { PlayerBarSectionComponent } from './components/player-bar-section/player-bar-section.component';
 import { GroupContainerComponent } from './components/reusable/group-container/group-container.component';
 import { NavSectionComponent } from './components/nav-section/nav-section.component';
@@ -16,6 +15,7 @@ import {CurrentSongComponent} from "./components/player-bar-section/current-song
 import {TrackControlsComponent} from "./components/player-bar-section/track-controls/track-controls.component";
 import {VolumeControlComponent} from "./components/player-bar-section/volume-control/volume-control.component";
 import { MainTrackTileComponent } from './components/reusable/main-track-tile/main-track-tile.component';
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -39,7 +39,8 @@ import { MainTrackTileComponent } from './components/reusable/main-track-tile/ma
     imports: [
         BrowserModule,
         AppRoutingModule,
-        FormsModule
+        FormsModule,
+        HttpClientModule
     ],
   providers: [LocalStorageManagerService],
   bootstrap: [AppComponent]

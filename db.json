@@ -1,0 +1,42 @@
+{
+  "artists": [
+    {
+      "name": "NF",
+      "pictureFilename": "nf.jpg"
+    },
+    {
+      "name": "piri & tommy",
+      "pictureFilename": "piritommy.jpg"
+    },
+    {
+      "name": "Rag'n'Bone Man",
+      "pictureFilename": "ragnboneman.jpg"
+    }
+  ],
+  "tracks": [
+    {
+      "artist": "NF",
+      "title": "HOPE",
+      "thumbnailFilename": "nfhope.jpg",
+      "track-src": "nfhope.mp3"
+    },
+    {
+      "artist": "NF",
+      "title": "MOTTO",
+      "thumbnailFilename": "nfmotto.jpg",
+      "track-src": "nfmotto.mp3"
+    },
+    {
+      "artist": "piri & tommy",
+      "title": "on & on",
+      "thumbnailFilename": "piritommyonon.jpg",
+      "track-src": "piritommyonon.mp3"
+    },
+    {
+      "artist": "Rag'n'Bone man",
+      "title": "Human",
+      "thumbnailFilename": "ragnbonemanhuman.jpg",
+      "track-src": "ragnbonemanhuman.mp3"
+    }
+  ]
+}

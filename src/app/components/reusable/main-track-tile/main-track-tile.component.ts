@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-main-track-tile',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./main-track-tile.component.scss']
 })
 export class MainTrackTileComponent {
-
+  @Input("artist") public artist: string = "";
+  @Input("image-url") public imageSrc: string = "";
 }
