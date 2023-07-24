@@ -28,7 +28,7 @@
         width: 2rem;
         height: 2rem;
         background: #282828;
-        margin-left: 1rem;
+        margin-left: 5%;
 
         svg {
           fill: getPrimary(500);
@@ -47,8 +47,10 @@
       justify-content: flex-end;
 
       .signature {
-        margin-right: 1rem;
+        width: fit-content;
+        margin-right: 10%;
         color: getPrimary(400);
+        white-space: nowrap;
       }
     }
   }
