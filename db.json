@@ -14,8 +14,25 @@
       "id": "ragnboneman",
       "name": "Rag'n'Bone Man",
       "pictureFilename": "ragnboneman.jpg"
+    },
+    {
+      "id": "rickastley",
+      "name": "Rick Astley",
+      "pictureFilename": "rickastley.jpg"
+    },
+    {
+      "id": "cocodrillo",
+      "name": "Cocodrillo",
+      "pictureFilename": "cocodrillo.jpg"
+    },
+    {
+      "id": "skrillex",
+      "name": "Skrillex",
+      "pictureFilename": "skrillex.jpg"
     }
   ],
+
+
   "tracks": [
     {
       "artist": "NF",
@@ -40,6 +57,30 @@
       "title": "Human",
       "thumbnailFilename": "ragnbonemanhuman.jpg",
       "trackSrc": "ragnbonemanhuman.mp3"
+    },
+    {
+      "artist": "Rick Astley",
+      "title": "Never Gonna Give You Up",
+      "thumbnailFilename": "rickastleynevergonnagiveyouup.jpg",
+      "trackSrc": "rickastleynevergonnagiveyouup.mp3"
+    },
+    {
+      "artist": "Cocodrillo",
+      "title": "Cocodrillo Meme Music",
+      "thumbnailFilename": "cocodrillomememusic.jpg",
+      "trackSrc": "cocodrillomememusic.mp3"
+    },
+    {
+      "artist": "NF",
+      "title": "HAPPY",
+      "thumbnailFilename": "nfhappy.jpg",
+      "trackSrc": "nfhappy.mp3"
+    },
+    {
+      "artist": "Skrillex",
+      "title": "Make It Bun Dem",
+      "thumbnailFilename": "skrillexmakeitbundem.jpg",
+      "trackSrc": "skrillexmakeitbundem.mp3"
     }
   ]
 }

@@ -1,19 +1,19 @@
 <div class="buttons-container">
-    <!--<button class="prev-btn">
+    <button class="prev-btn">
         <svg class="icon">
             <use [attr.xlink:href]="getPrevIcon()"></use>
         </svg>
-    </button>-->
+    </button>
     <button class="play-btn" (click)="playPauseOnClick()">
         <svg class="icon">
             <use [attr.xlink:href]="isPlaying ? getPauseIcon() : getPlayIcon()"></use>
         </svg>
     </button>
-    <!--<button class="next-btn">
+    <button class="next-btn">
         <svg class="icon">
             <use [attr.xlink:href]="getNextIcon()"></use>
         </svg>
-    </button>-->
+    </button>
 </div>
 <div class="time-control-container">
     <label>
