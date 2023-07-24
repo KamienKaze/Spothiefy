@@ -23,6 +23,7 @@ export class ArtistPageComponent {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
+
       this.id = params['name'];
 
       this.reloadComponent();
@@ -40,12 +41,24 @@ export class ArtistPageComponent {
   }
 
   private reloadComponent(): void {
+    this.tracks = [];
+
     for(let i: number = 0; i < this.allArtists.length; i++) {
       if(this.allArtists[i].id == this.id) {
         this.artistName = this.allArtists[i].name;
         this.imgSrc = this.allArtists[i].pictureFilename;
       }
     }
+
+    if(this.allTracks != null) {
+      for(let i: number = 0; i < this.allTracks.length; i++) {
+        if(this.allTracks[i].artist == this.artistName) {
+          this.tracks.push(this.allTracks[i]);
+        }
+      }
+    }
+
+    console.log(this.tracks);
   }
 
 }
