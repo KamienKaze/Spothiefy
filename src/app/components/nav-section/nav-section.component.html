@@ -11,5 +11,10 @@
                       [isLocked]="isLibraryCheckboxLocked"
                       (click)="libraryOnClick()"/>
     <div class="horizontal-line"></div>
-    <app-artist-nav-tile *ngFor="let artist of artists" name="{{artist.name}}" img="{{artist.pictureFilename}}"></app-artist-nav-tile>
+    <app-artist-nav-tile
+            routerLink="/artist/{{artist.id}}"
+            *ngFor="let artist of artists"
+            name="{{artist.name}}"
+            img="{{artist.pictureFilename}}">
+    </app-artist-nav-tile>
 </app-group-container>

@@ -17,12 +17,15 @@ export class HomePageComponent {
 
         if(currentHour >= 19 && currentHour < 6) {
             this.greeting = "Good evening";
+            console.log("Good evening");
         }
         if(currentHour >= 6 && currentHour < 12) {
             this.greeting = "Good morning";
+            console.log("Good morning");
         }
         if(currentHour >= 12 && currentHour < 19) {
             this.greeting = "Good afternoon";
+            console.log("Good afternoon");
         }
     }
 
@@ -30,7 +33,9 @@ export class HomePageComponent {
         urlManager.tracks$.subscribe(res => {
             this.tracks = res;
         });
+    }
 
+    ngOnInit() {
         this.setGreeting();
     }
 }

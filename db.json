@@ -1,14 +1,17 @@
 {
   "artists": [
     {
+      "id": "nf",
       "name": "NF",
       "pictureFilename": "nf.jpg"
     },
     {
+      "id": "piritommy",
       "name": "piri & tommy",
       "pictureFilename": "piritommy.jpg"
     },
     {
+      "id": "ragnboneman",
       "name": "Rag'n'Bone Man",
       "pictureFilename": "ragnboneman.jpg"
     }

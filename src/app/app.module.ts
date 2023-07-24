@@ -17,6 +17,7 @@ import {VolumeControlComponent} from "./components/player-bar-section/volume-con
 import { MainTrackTileComponent } from './components/reusable/main-track-tile/main-track-tile.component';
 import {HttpClientModule} from "@angular/common/http";
 import { ArtistNavTileComponent } from './components/reusable/artist-nav-tile/artist-nav-tile.component';
+import { ArtistPageComponent } from './components/reusable/artist-page/artist-page.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { ArtistNavTileComponent } from './components/reusable/artist-nav-tile/ar
         VolumeControlComponent,
         MainTrackTileComponent,
         ArtistNavTileComponent,
+        ArtistPageComponent,
     ],
     imports: [
         BrowserModule,
