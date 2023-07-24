@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-artist-nav-tile',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./artist-nav-tile.component.scss']
 })
 export class ArtistNavTileComponent {
-
+  @Input("name") public artistName: string = "";
+  @Input("img") public imgSrc: string = "";
 }

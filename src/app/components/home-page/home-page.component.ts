@@ -26,9 +26,9 @@ export class HomePageComponent {
         }
     }
 
-    constructor(urlManager: UrlManagerService) {
+    constructor(private urlManager: UrlManagerService) {
         urlManager.tracks$.subscribe(res => {
-           this.tracks = res;
+            this.tracks = res;
         });
 
         this.setGreeting();

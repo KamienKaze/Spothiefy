@@ -1,6 +1,8 @@
 import {Component} from '@angular/core';
 import {NavWidthManagerService} from "../../services/nav-width-manager/nav-width-manager.service";
 import {NavigationEnd, NavigationSkipped, NavigationStart, ResolveStart, Router} from "@angular/router";
+import {MusicPlayerService} from "../../services/music-player/music-player.service";
+import {UrlManagerService} from "../../services/urlManager/url-manager.service";
 
 @Component({
     selector: 'app-nav-section',
@@ -9,7 +11,13 @@ import {NavigationEnd, NavigationSkipped, NavigationStart, ResolveStart, Router}
 })
 export class NavSectionComponent {
 
-    constructor(private router: Router) {}
+    constructor(private router: Router, private urlManager: UrlManagerService) {
+        urlManager.artists$.subscribe(res => {
+            this.artists = res;
+        });
+    }
+
+    public artists: any = [];
 
     private currentUrl: string = '';
 
