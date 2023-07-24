@@ -1,0 +1,55 @@
+@import "./../../../assets/color-palette";
+
+:host {
+  .horizontal-line {
+    margin-top: 4rem;
+
+    height: 1px;
+    width: 100%;
+    background: getPrimary(300);
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 3rem;
+
+    .link-container {
+      width: 50%;
+      display: flex;
+      justify-content: flex-start;
+
+      .button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100%;
+        width: 2rem;
+        height: 2rem;
+        background: #282828;
+        margin-left: 1rem;
+
+        svg {
+          fill: getPrimary(500);
+          transform: scale(0.8);
+        }
+      }
+
+      :hover {
+        background: getPrimary(300);
+      }
+    }
+
+    .signature-container {
+      width: 50%;
+      display: flex;
+      justify-content: flex-end;
+
+      .signature {
+        margin-right: 1rem;
+        color: getPrimary(400);
+      }
+    }
+  }
+}
