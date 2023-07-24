@@ -8,12 +8,29 @@ import {UrlManagerService} from "../../services/urlManager/url-manager.service";
 })
 export class HomePageComponent {
 
-    tracks: any = [];
+    public greeting: string = "";
+    public tracks: any = [];
+
+    private setGreeting(): void {
+        let date: Date = new Date();
+        let currentHour: number = date.getHours();
+
+        if(currentHour >= 19 && currentHour < 6) {
+            this.greeting = "Good evening";
+        }
+        if(currentHour >= 6 && currentHour < 12) {
+            this.greeting = "Good morning";
+        }
+        if(currentHour >= 12 && currentHour < 19) {
+            this.greeting = "Good afternoon";
+        }
+    }
 
     constructor(urlManager: UrlManagerService) {
         urlManager.tracks$.subscribe(res => {
            this.tracks = res;
-           console.log(this.tracks);
         });
+
+        this.setGreeting();
     }
 }

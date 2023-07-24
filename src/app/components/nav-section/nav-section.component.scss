@@ -14,8 +14,24 @@
 
   .library-group {
     height: 100%;
-
+    width: 100%;
     display: flex;
     flex-direction: column;
+    row-gap: 0.7rem;
+    padding: 0;
+
+    .library {
+      margin-top: 0.75rem;
+      margin-left: 0.75rem;
+      margin-right: 0.75rem;
+    }
+
+    .horizontal-line {
+      height: 1px;
+      width: calc(100% - (2 * 0.75rem));
+      background-color: getPrimary(300);
+      margin-left: 0.75rem;
+      margin-right: 0.75rem;
+    }
   }
 }

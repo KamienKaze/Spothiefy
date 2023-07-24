@@ -16,6 +16,7 @@ import {TrackControlsComponent} from "./components/player-bar-section/track-cont
 import {VolumeControlComponent} from "./components/player-bar-section/volume-control/volume-control.component";
 import { MainTrackTileComponent } from './components/reusable/main-track-tile/main-track-tile.component';
 import {HttpClientModule} from "@angular/common/http";
+import { ArtistNavTileComponent } from './components/reusable/artist-nav-tile/artist-nav-tile.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import {HttpClientModule} from "@angular/common/http";
         TrackControlsComponent,
         VolumeControlComponent,
         MainTrackTileComponent,
+        ArtistNavTileComponent,
     ],
     imports: [
         BrowserModule,

@@ -5,8 +5,13 @@
                       [isLocked]="isHomeCheckboxLocked"/>
 </app-group-container>
 <app-group-container class="library-group">
-    <app-nav-checkbox name="library"
+    <app-nav-checkbox class="library"
+                      name="library"
                       [isActive]="isLibraryCheckboxActive"
                       [isLocked]="isLibraryCheckboxLocked"
                       (click)="libraryOnClick()"/>
+    <div class="horizontal-line"></div>
+    <app-artist-nav-tile></app-artist-nav-tile>
+    <app-artist-nav-tile></app-artist-nav-tile>
+    <app-artist-nav-tile></app-artist-nav-tile>
 </app-group-container>

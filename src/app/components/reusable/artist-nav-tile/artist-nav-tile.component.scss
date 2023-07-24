@@ -1,0 +1,50 @@
+@import "../../../../assets/color-palette";
+
+:host {
+  .container {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.6rem;
+    margin: 0 0.5rem 0 0.5rem;
+    height: fit-content;
+    container-type: inline-size;
+
+    .icon {
+      width: 2.9rem;
+      height: 2.9rem;
+      border-radius: 100%;
+      margin: 0.2rem 0.25rem 0.2rem 0.25rem;
+    }
+    .text-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      row-gap: 0.4rem;
+
+      .name {
+        color: getPrimary(500);
+        font-weight: bold;
+      }
+      .subtitle {
+        color: getPrimary(400);
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  @container (max-width: 10rem) {
+    .text-container {
+      .name {
+        display: none;
+      }
+      .subtitle {
+        display: none;
+      }
+    }
+  }
+
+  :hover {
+    background-color: #1c1c1c;
+    border-radius: 5px;
+  }
+}
