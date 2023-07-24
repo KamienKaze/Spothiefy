@@ -25,7 +25,7 @@ export class MainTrackTileComponent {
     return this.currentSong == this.name && this.currentArtist == this.artist;
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     MusicPlayerService.songName$.subscribe(res => {
       this.currentSong = res;
     });
