@@ -12,10 +12,10 @@ export class UrlManagerService {
   tracks$: BehaviorSubject<any> = new BehaviorSubject<any>(null);
 
   constructor(private httpClient: HttpClient) {
-    httpClient.get("http://localhost:3000/artists").subscribe(res => {
+    httpClient.get("https://kamienkaze.github.io/artists.json").subscribe(res => {
       this.artists$.next(res);
     });
-    httpClient.get("http://localhost:3000/tracks").subscribe(res => {
+    httpClient.get("https://kamienkaze.github.io/tracks.json").subscribe(res => {
       this.tracks$.next(res);
     });
   }
