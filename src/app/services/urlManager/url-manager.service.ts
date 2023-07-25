@@ -3,8 +3,6 @@ import {HttpClient} from "@angular/common/http";
 import {BehaviorSubject} from "rxjs";
 import * as http from "http";
 
-const URL: string = "./../../../assets/tracks.json"
-
 @Injectable({
   providedIn: 'root'
 })

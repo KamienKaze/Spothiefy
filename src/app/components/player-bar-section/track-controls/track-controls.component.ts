@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {MusicPlayerService} from "../../../services/music-player/music-player.service";
 import {NavWidthManagerService} from "../../../services/nav-width-manager/nav-width-manager.service";
 
-const BUTTON_ICON_PATH = `./assets/icons/player-controls`;
+const BUTTON_ICON_PATH = `assets/icons/player-controls`;
 const PLAY_ICON_FILE_NAME = `play`;
 const PAUSE_ICON_FILE_NAME = `pause`;
 const NEXT_ICON_FILE_NAME = `next`;

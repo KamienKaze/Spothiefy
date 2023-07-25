@@ -7,12 +7,12 @@ import {BehaviorSubject} from "rxjs";
 export class MusicPlayerService {
 
     private static audio: HTMLAudioElement = new Audio();
-    public static audioSrc: string = `./../../../assets/tracks/NF_-_MOTTO.mp3`;
+    public static audioSrc: string = `assets/tracks/NF_-_MOTTO.mp3`;
 
     public static audioDuration$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
     public static audioCurrentTime$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
     public static isPlaying$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-    public static songThumbnail$: BehaviorSubject<string> = new BehaviorSubject<string>(".\\..\\..\\..\\assets\\thumbnails\\nfmotto.jpg");
+    public static songThumbnail$: BehaviorSubject<string> = new BehaviorSubject<string>("assets/thumbnails/nfmotto.jpg");
     public static songName$: BehaviorSubject<string> = new BehaviorSubject<string>("MOTTO");
     public static artist$: BehaviorSubject<string> = new BehaviorSubject<string>("NF");
 
@@ -62,8 +62,8 @@ export class MusicPlayerService {
             MusicPlayerService.audioCurrentTime$.next(0);
         });
 
-        MusicPlayerService.loadNewAudio(`./../../../assets/tracks/nfhope.mp3`);
-        MusicPlayerService.songThumbnail$.next(`./../../../assets/thumbnails/nfhope.jpg`);
+        MusicPlayerService.loadNewAudio(`assets/tracks/nfhope.mp3`);
+        MusicPlayerService.songThumbnail$.next(`assets/thumbnails/nfhope.jpg`);
         MusicPlayerService.songName$.next(`HOPE`);
         MusicPlayerService.artist$.next(`NF`);
     }
