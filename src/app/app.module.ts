@@ -18,6 +18,7 @@ import { MainTrackTileComponent } from './components/reusable/main-track-tile/ma
 import {HttpClientModule} from "@angular/common/http";
 import { ArtistNavTileComponent } from './components/reusable/artist-nav-tile/artist-nav-tile.component';
 import { ArtistPageComponent } from './components/reusable/artist-page/artist-page.component';
+import {FooterComponent} from "./components/footer/footer.component";
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { ArtistPageComponent } from './components/reusable/artist-page/artist-pa
         MainTrackTileComponent,
         ArtistNavTileComponent,
         ArtistPageComponent,
+        FooterComponent
     ],
     imports: [
         BrowserModule,

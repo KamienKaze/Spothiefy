@@ -1,0 +1,55 @@
+// ALL COLORS USED IN APPLICATION
+
+$black: #000000;
+$dark-gray: #121212;
+$medium-gray: #4d4d4d;
+$gray: #b2b2b2;
+$white: #ffffff;
+
+$green: #1db955;
+
+// ALL FILTERS USED IN APPLICATION
+
+
+
+$primary: (
+        100: $black,
+        200: $dark-gray,
+        300: $medium-gray,
+        400: $gray,
+        500: $white
+);
+
+$accent: (
+        100: $green
+);
+
+@function getPrimary($color) {
+  @return map-get($primary, $color);
+}
+
+@function getAccent($color) {
+  @return map-get($accent, $color);
+}
+
+@function getPrimarySvgFilter() {
+
+}
+
+@function getAccentSvgFilter() {
+
+}
+
+// PROVIDING COLORS FOR TYPESCRIPT
+// ADD "color-provider" ID TO APP-COMPONENT STYLES FILE!
+
+#color-provider {
+
+  @each $name, $color in $primary {
+    --primary-#{$name}: #{$color};
+  }
+
+  @each $name, $color in $accent {
+    --accent-#{$name}: #{$color};
+  }
+}
